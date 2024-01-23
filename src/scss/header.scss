@@ -1,0 +1,118 @@
+
+
+.header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	
+	&__container{
+		height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__menu {}
+
+	&__logo {}
+
+	&__icons {}
+}
+
+.menu {
+	&__icon {}
+
+	&__body {}
+
+	&__list {
+		display: flex;
+		gap: 25px;
+	}
+
+	&__item {}
+
+	&__link {
+		position: relative;
+		font-size: 15px;
+		color: inherit;
+		transition: all 0.3s ease 0s;
+		&::after{
+		content: '';
+			position: absolute;
+			width: 0%;
+			height: 2px;
+			bottom: -5px;
+			left: 50%;
+			background-color: #151515;
+			transition: all 0.3s ease 0s;
+		}
+		&:hover{
+			&::after{
+			width: 100%;
+			left: 0;
+			}
+		}
+
+	}
+&__link--current {
+	&::after {
+		width: 100%;
+		left: 0;
+	}
+}
+}
+
+
+.icons-header {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	img{
+		width: 16px;
+		height: 16px;
+	}
+	&__search {}
+
+	&__login {}
+
+	&__cart {
+		span{
+			width: 16px;
+			height: 16px;
+			background-color: #151515;
+			border-radius: 50%;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			font-size: 10px;
+			font-weight: 700;
+			margin-left: 2px;
+		}
+	}
+}
+
+.search-icon {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	&__icon {
+		width: 14px;
+		height: 14px;
+		cursor: pointer;
+	}
+
+	&__input {
+		font-size: 16px;
+		width: 0;
+		padding: 2px;
+		transition: all 0.3s ease 0s;
+		&::placeholder{
+			color: #626161;
+			font-size: 16px
+		}
+		&:focus{
+			width: 100px;
+		}
+	}
+}
