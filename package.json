@@ -9,7 +9,8 @@
     "dev": "gulp",
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gulp deployFTP --build",
+		"git": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
