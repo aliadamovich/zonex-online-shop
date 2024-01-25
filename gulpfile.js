@@ -4,6 +4,8 @@ import gulp from "gulp";
 import { path } from "./gulp/config/path.js";
 //импорт общих плагинов 
 import { plugins } from "./gulp/config/plugins.js";
+
+
 //передаем значения в глобальную переменную
 global.app = {
 	isBuild: process.argv.includes('--build'),

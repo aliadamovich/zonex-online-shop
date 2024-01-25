@@ -327,7 +327,6 @@ h6 {
 .search-icon {
   display: flex;
   align-items: center;
-  gap: 5px;
 }
 .search-icon__icon {
   width: 14px;
