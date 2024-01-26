@@ -95,7 +95,7 @@
 .search-icon {
 	display: flex;
 	align-items: center;
-	// gap: 5px;
+	gap: 10px;
 	&__icon {
 		width: 14px;
 		height: 14px;
@@ -104,9 +104,11 @@
 
 	&__input {
 		font-size: 16px;
-		width: 0;
-		padding: 2px;
+		width: 0px;
+		padding: 2px 0;
 		transition: all 0.3s ease 0s;
+		background: transparent;
+		border-bottom: 1px solid #151515;
 		&::placeholder{
 			color: #626161;
 			font-size: 16px

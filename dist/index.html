@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240125152501">
+	<link rel="stylesheet" href="css/style.min.css">
 	<title>Главная</title>
 	</head>
 	
@@ -27,16 +27,16 @@
 				</ul>
 			</div>
 		</nav>
-		<a class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture></a>
+		<a class="header__logo"><img src="img/logo.png" alt="logo"></a>
 		<div class="header__icons icons-header">
 			<label for="input-icon" class="icons-header__search search-icon">
-				<picture><source srcset="img/search.webp" type="image/webp"><img class="search-icon__icon" src="img/search.png" alt="search"></picture>
+				<img class="search-icon__icon" src="img/search.png" alt="search">
 				<input id="input-icon" class="search-icon__input" type="text" placeholder="search">
 			</label>
-			<!-- <a href="#" class="icons-header__search"><picture><source srcset="img/search.webp" type="image/webp"><img src="img/search.png" alt=""></picture></a> -->
-			<a href="#" class="icons-header__login"><picture><source srcset="img/user.webp" type="image/webp"><img src="img/user.png" alt=""></picture></a>
+			<!-- <a href="#" class="icons-header__search"><img src="img/search.png" alt=""></a> -->
+			<a href="#" class="icons-header__login"><img src="img/user.png" alt=""></a>
 			<a href="#" class="icons-header__cart">
-				<picture><source srcset="img/shopping-bag.webp" type="image/webp"><img src="img/shopping-bag.png" alt=""></picture>
+				<img src="img/shopping-bag.png" alt="">
 				<span>3</span>
 			</a>
 		</di>
@@ -44,13 +44,42 @@
 	</header>
 		<main>
 			<section class="main__cover cover">
-				<div class="cover__body">
-					<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
-					<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
+				<div class="cover__swiper swiper">
+					<div class="cover__wrapper swiper-wrapper">
+						<div class="cover__slide swiper-slide">
+							<div class="cover__content">
+								<div class="cover__body">
+									<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
+									<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
+								</div>
+								<div class="cover__woman ibg">
+									<img src="img/bg_.jpg" alt="cover">
+								</div>
+							</div>
+						</div>
+						<div class="cover__slide swiper-slide">
+							<div class="cover__content">
+								<div class="cover__body">
+									<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
+									<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
+								</div>
+								<div class="cover__woman ibg">
+									<img src="img/bg_.jpg" alt="cover">
+								</div>
+							</div>
+						</div>
+						<div class="cover__slide swiper-slide">
+							<div class="cover__body">
+								<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
+								<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
+							</div>
+							<div class="cover__woman ibg">
+								<img src="img/bg_.jpg" alt="cover">
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="cover__woman">
-					<picture><source srcset="img/bg_.webp" type="image/webp"><img src="img/bg_.jpg" alt="cover"></picture>
-				</div>
+				<div class="swiper-pagination"></div>
 			</section>
 		</main>
 	
@@ -59,6 +88,6 @@
 
 	</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240125152501"></script>
+	<script src="js/app.min.js"></script>
 </body>
 </html>
