@@ -1,8 +1,6 @@
 @import "fonts";
 @import "reset";
-@import "burger";
-@import "header";
-@import "main";
+
 
 //ШРИФТЫ===========================================
 //&display=swap&subset=cyrillic-ext
@@ -74,7 +72,6 @@ body._lock {
 		font-size: 15px;
 		color: inherit;
 		transition: all 0.3s ease 0s;
-
 	&::after {
 		content: '';
 		position: absolute;
@@ -99,13 +96,38 @@ body._lock {
 		}
 	}
 }
+
+.block-products {
+	
+	&__item {
+		display: grid;
+		grid-auto-flow: row;
+	}
+
+	&__img {}
+
+	&__content {}
+}
+
+.content-block {
+	&__label {}
+
+	&__name {}
+
+	&__price {}
+}
+
+
 .main {
 	&__cover {}
-		&__categories {}
+	&__categories {}
+		&__products {}
 }
 //!==HEADER==========================================================================//
 //!============================================================================//
-
+@import "header";
+@import "burger";
+@import "main";
 //!============================================================================//
 //!============================================================================//
 //!============================================================================//
