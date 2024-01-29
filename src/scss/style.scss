@@ -64,6 +64,41 @@ body._lock {
 	overflow: hidden;
 }
 
+//!==GENERAL CLASSES==============================================//
+.nav{
+	&__list {
+		display: flex;
+	}
+	&__link{
+		position: relative;
+		font-size: 15px;
+		color: inherit;
+		transition: all 0.3s ease 0s;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0%;
+		height: 2px;
+		bottom: -5px;
+		left: 50%;
+		background-color: #151515;
+		transition: all 0.3s ease 0s;
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
+	&__link--current {
+		&::after {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
 
 //!==HEADER==========================================================================//
 //!============================================================================//

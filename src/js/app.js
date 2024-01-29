@@ -14,22 +14,28 @@ const swiper = new Swiper('.cover__swiper', {
 //Marketing pop-up
 
 const marketing = document.querySelector('.marketing');
-const productName = document.querySelector('.info-marketing__title');
-const purchasePlace = document.querySelector('.info-marketing__where');
+
 let counter = 0;
+let delay = 10000;
 
 const marketingData = [
 	{
-		title: 'Moms jeans',
-		where: 'Buenos Aires, Argentina'
+		photo: '../img/coat.png',
+		title: 'Faux shearling double-breasted coat',
+		where: 'London, Great Britain',
+		when: '15'
 	},
 	{
+		photo: '../img/oversize.png',
 		title: 'Oversize t-shirt',
-		where: 'New York, Usa'
+		where: 'New York, Usa',
+		when: '10'
 	},
 	{
+		photo: '../img/leather_shoes.png',
 		title: 'Black leather shoes',
-		where: 'Minsk, Belarus'
+		where: 'Rome, Italy',
+		when: '7'
 	}
 ]
 
@@ -42,38 +48,34 @@ marketing.addEventListener('click', (e) => {
 
 function removeMarketing() {
 	marketing.classList.add('__closed');
+}
+
+function changeMarketing() {
+
+	if (!marketing.classList.contains('__closed')) {
+		removeMarketing();
+	};
+	
 	setTimeout(() => {
-		addMarketing();
-	}, 3000);
+		const productImage = document.querySelector('.img-marketing');
+		const productName = document.querySelector('.info-marketing__title');
+		const purchaseTime = document.querySelector('.info-marketing__when');
+		const purchasePlace = document.querySelector('.info-marketing__where');
+
+		productImage.src = marketingData[counter].photo;
+		productName.innerHTML = marketingData[counter].title;
+		purchaseTime.innerHTML = `${marketingData[counter].when} minutes ago`;
+		purchasePlace.innerHTML = `${marketingData[counter].where}`;
+
+		counter++;
+		if (counter >= marketingData.length) {
+			counter = 0;
+		}
+		marketing.classList.remove('__closed');
+	}, delay - (delay - 500));
 
 }
 
-function addMarketing() {
-	
-	productName.innerHTML = marketingData[counter].title;
-	purchasePlace.innerHTML = `15 minutes ago ${marketingData[counter].where}`;
-	if (counter >= marketingData.length - 1) {
-		counter = 0;
-	}
-	marketing.classList.remove('__closed');
-	counter++;
-	
-}
+changeMarketing();
+// setInterval(changeMarketing, delay);
 
-// function changeMarketing() {
-	
-// 	setTimeout(() => {
-// 		removeMarketing();
-// 		productName.innerHTML = marketingData[counter].title;
-// 		purchasePlace.innerHTML = `15 minutes ago ${marketingData[counter].where}`;
-// 	}, 2000);
-
-// 	if (counter >= marketingData.length) {
-// 		counter = 0;
-// 	}
-// 	addMarketing();
-// 	counter++;
-// 	console.log(counter);
-// };
-
-// changeMarketing();
