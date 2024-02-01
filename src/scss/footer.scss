@@ -108,3 +108,40 @@
 		}
 	}
 }
+
+//!=====CATALOG-FOOTER============
+.bottom-footer {
+	&__options {}
+}
+
+.footer-options {
+	display: flex;
+	gap: 50px;
+	&__choise {
+			span{
+			color: #858585;
+			margin-right: 14px;
+		}
+		select{
+			font-weight: 400;
+			color: #151515;
+			text-transform: uppercase;
+		}
+	}
+	
+}
+.footer {
+	&__subbotom {}
+}
+
+.subbotom-footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 14px 0;
+	align-items: center;
+	&__rights {
+	
+	}
+
+	&__cards {}
+}

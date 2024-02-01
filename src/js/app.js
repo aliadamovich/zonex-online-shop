@@ -3,12 +3,20 @@ flsFunctions.isWebp();
 
 
 //swiper
-const swiper = new Swiper('.cover__swiper', {
+const swiperMain = new Swiper('.cover__swiper', {
 	loop: true,
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true
 		},
+});
+
+const swiperCatalog = new Swiper('.cover-catalog__slider', {
+	loop: true,
+	navigation: {
+		nextEl: '#nav-right',
+		prevEl: '#nav-left',
+	},
 });
 
 //Marketing pop-up
