@@ -4,40 +4,40 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.min.css">
-	<title>Главная</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+	<title>Main</title>
 	</head>
 	
 <body>
 	<div class="wrapper">
 		<header class="header">
-	<div class="container header__container">
+	<div class="container container--general header__container">
 		<nav class="header__menu menu">
 			<div class="menu__icon">
 				<span></span>
 				<span></span>
 				<span></span>
 			</div>
-			<div class="menu__body">
-				<ul class="menu__list">
-					<li class="menu__item"><a href="" class="menu__link">Home</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Shop</a></li>
-					<li class="menu__item"><a class="menu__link menu__link--current">Elements</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Page</a></li>
+			<div class="menu__body nav">
+				<ul class="menu__list nav__list">
+					<li class="menu__item"><a class="menu__link nav__link nav__link--current">Home</a></li>
+					<li class="menu__item"><a href="catalog.html" class="menu__link nav__link">Shop</a></li>
+					<li class="menu__item"><a href="#main__products" class="menu__link nav__link ">Elements</a></li>
+					<li class="menu__item"><a href="#main__banners" class="menu__link nav__link">Blog</a></li>
+					<li class="menu__item"><a href="" class="menu__link nav__link">Page</a></li>
 				</ul>
 			</div>
 		</nav>
-		<a class="header__logo"><img src="img/logo.png" alt="logo"></a>
+		<a href="index.html" class="header__logo"><img src="img/logo.png" alt="logo"></a>
 		<div class="header__icons icons-header">
 			<label for="input-icon" class="icons-header__search search-icon">
 				<img class="search-icon__icon" src="img/search.png" alt="search">
 				<input id="input-icon" class="search-icon__input" type="text" placeholder="search">
 			</label>
-			<!-- <a href="#" class="icons-header__search"><img src="img/search.png" alt=""></a> -->
 			<a href="#" class="icons-header__login"><img src="img/user.png" alt=""></a>
 			<a href="#" class="icons-header__cart">
 				<img src="img/shopping-bag.png" alt="">
-				<span>3</span>
+				<span class="quantity">3</span>
 			</a>
 		</di>
 	</div>
@@ -69,25 +69,256 @@
 							</div>
 						</div>
 						<div class="cover__slide swiper-slide">
-							<div class="cover__body">
-								<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
-								<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
-							</div>
-							<div class="cover__woman ibg">
-								<img src="img/bg_.jpg" alt="cover">
+							<div class="cover__content">
+								<div class="cover__body">
+									<h1 class="cover__title">Fall-Winter Clearance Sales</h1>
+									<p class="cover__text">All Sale Items are Final Sale / Free Shipping on All Orders</p>
+								</div>
+								<div class="cover__woman ibg">
+									<img src="img/bg_.jpg" alt="cover">
+								</div>
 							</div>
 						</div>
 					</div>
+					<div class="swiper-pagination cover__pagination"></div>
 				</div>
-				<div class="swiper-pagination"></div>
+				<div class="marketing __closed">
+					<div class="marketing__img">
+						<img src="img/coat.png" alt="coat" class="img-marketing">
+					</div>
+					<div class="marketing__info info-marketing">
+						<p class="info-marketing__who">Someone purchaed a</p>
+						<h3 class="info-marketing__title">Faux shearling double-breasted coat</h3>
+						<span class="info-marketing__when">15 minutes ago</span>
+						<span class="info-marketing__where">London, Great Britain</span>
+					</div>
+					<a href="#" class="marketing__close"></a>
+				</div>
+			</section>
+			<section class="main__categories categories">
+				<div class="categories__container container container--general">
+					<div class="categories__items">
+						<article class="categories__item item-category">
+							<div class="item-category__content">
+								<h3 class="item-category__title">Women's <br> Mid-Season</h3>
+								<a href="#" class="item-category__button nav__link">Shop Now</a>
+							</div>
+							<div class="item-category__image">
+								<img src="img/category_1.jpg" alt="">
+							</div>
+						</article>
+						<article class="categories__item item-category">
+							<div class="item-category__content">
+								<h3 class="item-category__title">Summer <br>Romance</h3>
+								<a href="#" class="item-category__button nav__link">Shop Now</a>
+							</div>
+							<div class="item-category__image">
+								<img src="img/category_2.jpg" alt="">
+							</div>
+						</article>
+						<article class="categories__item item-category">
+							<div class="item-category__content">
+								<h3 class="item-category__title">20% Off <br> All Accessories</h3>
+								<a href="#" class="item-category__button nav__link">Shop Now</a>
+							</div>
+							<div class="item-category__image">
+								<img src="img/category_3.jpg" alt="">
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<div id="main__products" class="main__products products">
+				<div class="products__container container container--general">
+					<div class="products__tabs tabs-products">
+						<ul class="tabs-products__list nav__list">
+							<li><button class="tabs-products__link nav__link nav__link--current tabs-products__link--current">Best Sellers</button></li>
+							<li><button class="tabs-products__link nav__link">New Products</button></li>
+							<li><button class="tabs-products__link nav__link">Sale Products</button></li>
+						</ul>
+					</div>
+					<div class="products__grid grid-products block-products">
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/21.jpg" alt="">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--new">NEW</div>
+								<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+								<div class="content-block__price">$220.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/22.jpg" alt="">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<h3 class="content-block__name">Azure Tote</h3>
+								<div class="content-block__price">$290.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/23.jpg" alt="">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<h3 class="content-block__name">Blue Raincoat</h3>
+								<div class="content-block__price">$250.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/24.jpg" alt="">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--best">BEST SELLER</div>
+								<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+								<div class="content-block__price">$80.00 - $125.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/25.jpg" alt="shirt">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--best">BEST SELLER</div>
+								<h3 class="content-block__name">Shirt in organic cotton classic gingham</h3>
+								<div class="content-block__price">$59.50</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/26.jpg" alt="shirt">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--hot">HOT</div>
+								<h3 class="content-block__name">Tailored indigo jumpsuit</h3>
+								<div class="content-block__price">$128.00 <span>165.00</span></div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/27.jpg" alt="shirt">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--top">Top rate</div>
+								<h3 class="content-block__name">Triple stone drop earrings</h3>
+								<div class="content-block__price">$49.50</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/28.jpg" alt="shoes">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+								<div class="content-block__price">$158.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/29.jpg" alt="shirt">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<div class="content-block__label content-block__label--only">Only a few left</div>
+								<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+								<div class="content-block__price">$220.00</div>
+							</div>
+						</a>
+						<a href="#" class="grid-products__item block-products__item">
+							<div class="grid-products__image block-products__img">
+								<img src="img/30.jpg" alt="shirt">
+							</div>
+							<div class="grid-products__content block-products__content content-block">
+								<h3 class="content-block__name">Azure Tote</h3>
+								<div class="content-block__price">$290.00</div>
+							</div>
+						</a>
+					</div>
+					<div class="products__more more-products">
+						<a href="#" class="more-products__button">
+							<span>Load More</span>
+							<img src="img/down_541.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			<section id="main__banners" class="main__banners banners">
+				<div class="banners__row">
+					<a href="#" class="banners__column column-banner">
+						<div class="column-banner__content">
+							<h4 class="column-banner__title">Men’s Sportswear</h4>
+							<button class="column-banner__btn nav__link nav__link--white">Read more</button>
+						</div>
+						<div class="column-banner__img">
+							<img src="img/men_banner.jpg" alt="banner">
+						</div>
+					</a>
+					<a href="#" class="banners__column column-banner">
+						<div class="column-banner__content">
+							<h4 class="column-banner__title">Find your fit</h4>
+							<button class="column-banner__btn nav__link nav__link--white">Read more</button>
+						</div>
+						<div class="column-banner__img">
+							<img src="img/woman-banner.jpeg" alt="banner">
+						</div>
+					</a>
+				</div>
 			</section>
 		</main>
 	
-		<footer>
-	я подвал
-
+		<footer class="footer">
+	<div class="footer__container container container--general">
+		<div class="footer__top top-footer">
+			<section class="top-footer__column">
+				<h4 class="top-footer__title">Customer service</h4>
+				<nav class="top-footer__menu menu-footer">
+					<ul class="menu-footer__list nav__list">
+						<li><a href="tel:8665972742" class="menu-footer__link nav__link">Phone: +866.597.2742</a></li>
+						<li><a href="" class="menu-footer__link nav__link">Live chat</a></li>
+						<li><a href="" class="menu-footer__link nav__link">About Us</a></li>
+						<li><a href="" class="menu-footer__link nav__link">Terms & Conditions</a></li>
+					</ul>
+				</nav>
+			</section>
+			<section class="top-footer__column">
+				<h4 class="top-footer__title">Company</h4>
+				<nav class="top-footer__menu menu-footer">
+					<ul class="menu-footer__list nav__list">
+						<li><a href="tel:8665972742" class="menu-footer__link nav__link">What We Do</a></li>
+						<li><a href="" class="menu-footer__link nav__link">Available Services</a></li>
+						<li><a href="" class="menu-footer__link nav__link">Latest Posts</a></li>
+						<li><a href="" class="menu-footer__link nav__link">FAQs</a></li>
+					</ul>
+				</nav>
+			</section>
+			<section class="top-footer__column">
+				<h4 class="top-footer__title">Our newsletter</h4>
+				<p class="top-footer__subtitle">Join our list and get 15% off your first purchase!</p>
+				<form class="top-footer__form form-footer">
+					<input type="text" placeholder="Email Address">
+					<button>Subscribe</button>
+				</form>
+				<p class="top-footer__record">*Don’t worry we don’t spam</p>
+			</section>
+		</div>
+		<div class="footer__bottom bottom-footer">
+			<div class="bottom-footer__links">
+				<a href="" class="bottom-footer__link">Return Policy</a>
+				<a href="" class="bottom-footer__link">Privacy Policy</a>
+				<a href="" class="bottom-footer__link">Privacy Policy</a>
+			</div>
+			<div class="bottom-footer__social">
+				<a href=""><img src="img/twitter.png" alt=""></a>
+				<a href=""><img src="img/facebook.png" alt=""></a>
+				<a href=""><img src="img/instagram.png" alt=""></a>
+				<a href=""><img src="img/pinterest.png" alt=""></a>
+			</div>
+		</div>
+	</div>
 	</footer>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 </html>

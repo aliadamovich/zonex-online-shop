@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+	<title>Catalog</title>
+	</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+	<div class="container container--catalog header__container">
+		<nav class="header__menu menu">
+			<div class="menu__icon">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="menu__body nav">
+				<ul class="menu__list nav__list">
+					<li class="menu__item"><a href="index.html" class="menu__link nav__link">Home</a></li>
+					<li class="menu__item"><a class="menu__link nav__link nav__link--current">Shop</a></li>
+					<li class="menu__item"><a href="" class="menu__link nav__link">Elements</a></li>
+					<li class="menu__item"><a href="#main__banners" class="menu__link nav__link">Blog</a></li>
+					<li class="menu__item"><a href="" class="menu__link nav__link">Page</a></li>
+				</ul>
+			</div>
+		</nav>
+		<a href="index.html" class="header__logo"><img src="img/logo.png" alt="logo"></a>
+		<div class="header__icons icons-header">
+			<label for="input-icon" class="icons-header__search search-icon">
+				<img class="search-icon__icon" src="img/search.png" alt="search">
+				<input id="input-icon" class="search-icon__input" type="text" placeholder="search">
+			</label>
+			<a href="#" class="icons-header__login"><img src="img/user.png" alt=""></a>
+			<a href="#" class="icons-header__cart">
+				<img src="img/shopping-bag.png" alt="">
+				<span class="quantity">3</span>
+			</a>
+			</di>
+		</div>
+</header>
+		<main>
+			<div class="catalog__cover cover-catalog">
+				<div class="container container--catalog">
+					<div class="cover-catalog__slider swiper-slider">
+						<section class="cover-catalog__body swiper-wrapper">
+							<div class="cover-catalog__slide slide-catalog swiper-slide">
+								<div class="slide-catalog__content">
+									<h2 class="slide-catalog__title">The best thing about <br> going back to school?</h2>
+									<p class="slide-catalog__text">This fall denim is king! Denim is officially back in and cool to wear in all its many forms</p>
+									<div class="slide-catalog__buttons">
+										<button class="slide-catalog__button block__button block__button--black">Discovery</button>
+										<button class="slide-catalog__button block__button block__button--white">Shop now</button>
+									</div>
+								</div>
+								<div class="slide-catalog__img ibg">
+									<img src="img/catalog_bg.jpg" alt="cover catalog">
+								</div>
+							</div>
+							<div class="cover-catalog__slide slide-catalog swiper-slide">
+								<div class="slide-catalog__content">
+									<h2 class="slide-catalog__title">The best thing about <br> going back to school?</h2>
+									<p class="slide-catalog__text">This fall denim is king! Denim is officially back in and cool to wear in all its many
+										forms</p>
+									<div class="slide-catalog__buttons">
+										<button class="slide-catalog__button block__button block__button--black">Discovery</button>
+										<button class="slide-catalog__button block__button block__button--white">Shop now</button>
+									</div>
+								</div>
+								<div class="slide-catalog__img ibg">
+									<img src="img/catalog_bg.jpg" alt="cover catalog">
+								</div>
+							</div>
+							
+						</section>
+						<div class="cover-catalog__custom-nav">
+							<div id="nav-left" class="nav-left">
+								<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+									image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 243.58">
+									<path fill-rule="nonzero"
+										d="M138.43 243.58 0 122.84 140.47 0l20.92 23.91-94.92 83 445.53-.42v31.75l-445.54.41 92.89 81.02z" />
+								</svg>
+							</div>
+							<div id="nav-right" class="nav-right">
+								<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+									image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 243.58">
+									<path fill-rule="nonzero"
+										d="M373.57 0 512 120.75 371.53 243.58l-20.92-23.91 94.93-83L0 137.09v-31.75l445.55-.41-92.89-81.02z" />
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="catalog__breadcrumbs breadcrumbs-catalog">
+				<div class="container container--catalog">
+					<div class="breadcrumbs-catalog__body">
+						<a href="" class="breadcrumbs-catalog__elem">home</a>
+						<a href="" class="breadcrumbs-catalog__elem">shop</a>
+						<a class="breadcrumbs-catalog__elem breadcrumbs-catalog__elem--current">new arrivals</a>
+					</div>
+				</div>
+			</div>
+			<div class="catalog__filter filter">
+				<div class="container container--catalog">
+					<div class="filter__body">
+						<div class="filter__aside aside-filter">
+							<div class="aside-filter__hide hide-filter">
+								<button class="hide-filter__btn">hide filters</button>
+							</div>
+							<ul class="aside-filter__categories categories-filter">
+								<li class="categories-filter__item open">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">categories</button>
+										<span class="quantity">1</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">All categories</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">T-Shirt</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Accessories</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Summer</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Dresses</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Shirts</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Coats</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Jacket</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Clothes</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Short</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="categories-filter__item">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">color</button>
+										<span class="quantity">3</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">All colors</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Red</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Black</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">White</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Green</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Gold</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Gray</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Blue</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Brown</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Silver</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="categories-filter__item">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">size</button>
+										<span class="quantity">3</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">38</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">40</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">42</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">44</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">46</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">48</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">50</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">52</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="categories-filter__item">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">price</button>
+										<span class="quantity">1</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">All prices</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">From $0 to $50</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">From $50 to $100</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">From $100 to $200</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">From $200 to $300</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">More than $300</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="categories-filter__item">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">filter by brand</button>
+										<span class="quantity">2</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Adidas</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Fila</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Reebok</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Max & Mara</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Nike</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Michael Kors</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Tommy Hillfiger</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Baon</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="categories-filter__item">
+									<h2 class="categories-filter__head">
+										<button class="categories-filter__btn">discount</button>
+										<span class="quantity">1</span>
+									</h2>
+									<div class="categories-filter__content content-category">
+										<ul class="content-category__list">
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">70% And Above</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">60% - 70% Off</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">40% - 60% Off</span>
+												</label>
+											</li>
+											<li class="content-category__link">
+												<label class="content-category__item">
+													<input class="content-category__input" type="checkbox">
+													<span class="content-category__name">Less Than 40% Off</span>
+												</label>
+											</li>
+											
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="filter__grid"></div>
+					</div>
+				</div>
+			</div>
+		</main>
+	
+		<footer class="footer">
+	<div class="container container--catalog">
+		<div class="footer__bottom bottom-footer">
+			<div class="bottom-footer__social">
+				<a href=""><img src="img/twitter.png" alt=""></a>
+				<a href=""><img src="img/facebook.png" alt=""></a>
+				<a href=""><img src="img/instagram.png" alt=""></a>
+				<a href=""><img src="img/pinterest.png" alt=""></a>
+			</div>
+			<div class="bottom-footer__links">
+				<a href="" class="bottom-footer__link">Return Policy</a>
+				<a href="" class="bottom-footer__link">Privacy Policy</a>
+				<a href="" class="bottom-footer__link">Privacy Policy</a>
+			</div>
+			<div class="bottom-footer__options footer-options">
+				<div class="footer-options__choise">
+					<span>Currency</span>
+					<select name="" id="">
+						<option selected value="USD">USD</option>
+						<option value="EUR">EUR</option>
+						<option value="gbp">GBP</option>
+					</select>
+				</div>
+				<div class="footer-options__choise">
+					<span>Language</span>
+					<select name="" id="">
+						<option selected value="eng">ENGLISH</option>
+						<option value="deu">DEUTCH</option>
+						<option value="fra">FRANÇAIS</option>
+						<option value="fra">РУССКИЙ</option>
+						<option value="fra">ESPAÑOL</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="footer__subbotom subbotom-footer">
+			<div class="subbotom-footer__rights">
+				©2019 Zonex All rights reserved
+			</div>
+			<div class="subbotom-footer__cards">
+				<img src="img/payment_596.png" alt="">
+			</div>
+		</div>
+	</div>
+	</footer>
+	</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="js/app.min.js"></script>
+</body>
+</html>
