@@ -136,6 +136,10 @@ h6 {
   max-width: 1346px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Jost;
   font-weight: 500;
@@ -838,6 +842,34 @@ body._lock {
 .cover-catalog__custom-nav svg {
   width: 16px;
   height: 16px;
+}
+
+.breadcrumbs-catalog {
+  padding-top: 11px;
+}
+.breadcrumbs-catalog__body {
+  padding: 28px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.breadcrumbs-catalog__elem {
+  position: relative;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #858585;
+}
+.breadcrumbs-catalog__elem:not(:last-child) {
+  margin-right: 28px;
+}
+.breadcrumbs-catalog__elem:not(:last-child)::before {
+  content: "/";
+  position: absolute;
+  font-size: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+}
+.breadcrumbs-catalog__elem--current {
+  color: #151515;
 }
 
 .footer {

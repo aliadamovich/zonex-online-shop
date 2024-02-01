@@ -85,10 +85,35 @@
 		height: 16px;
 	}
 }
-.swiper-button-prev {}
+//!=====BREADCRUMBS=======================
 
-.cover-catalog--prev {}
+.breadcrumbs-catalog {
+	padding-top: 11px;
+	&__body {
+		padding: 28px 0;
+		border-bottom: 1px solid #eeeeee;
+	}
 
-.swiper-button-next {}
+	&__elem {
+		position: relative;
+		font-size: 10px;
+		text-transform: uppercase;
+		color: #858585;
+	
+	&:not(:last-child){
+		margin-right: 28px;
+		&::before {
+				content: '/';
+				position: absolute;
+				font-size: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+				right: -20px;
+			}
+		}
+	}
 
-.cover-catalog--next {}
+	&__elem--current{
+		color: #151515;
+	}
+}
