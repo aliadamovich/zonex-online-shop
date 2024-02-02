@@ -182,7 +182,7 @@
 		&.open {
 			.categories-filter__head {
 				&::after {
-					transform: rotate(90deg);
+					transform: rotate(-90deg);
 				}
 			}
 		
@@ -221,6 +221,7 @@
 			width: 2px;
 			height: 12px;
 			background: #aaaaaa;
+			transition: transform 0.3s ease 0s;
 		}
 	}
 

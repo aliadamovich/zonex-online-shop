@@ -187,7 +187,7 @@ body._lock {
   color: #fff;
   font-size: 10px;
   font-weight: 700;
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .nav__list {
@@ -342,18 +342,27 @@ body._lock {
   align-items: center;
   gap: 25px;
 }
-.icons-header img {
+.icons-header svg {
   width: 16px;
   height: 16px;
 }
+.icons-header__search, .icons-header__cart, .icons-header__login {
+  height: 16px;
+}
+.icons-header__cart {
+  display: inline-flex;
+  align-items: center;
+}
+
 .search-icon {
+  margin-right: -5px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
-.search-icon__icon {
-  width: 14px;
-  height: 14px;
+.search-icon__svg {
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 .search-icon__input {
@@ -925,7 +934,7 @@ body._lock {
   border-bottom: 1px solid #eeeeee;
 }
 .categories-filter__item.open .categories-filter__head::after {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 .categories-filter__item.open .content-category {
   display: block;
@@ -958,6 +967,7 @@ body._lock {
   width: 2px;
   height: 12px;
   background: #aaaaaa;
+  transition: transform 0.3s ease 0s;
 }
 .categories-filter__btn {
   font-size: 13px;

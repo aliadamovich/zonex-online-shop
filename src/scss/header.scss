@@ -31,6 +31,7 @@
 	&__item {}
 
 	&__link {
+
 	}
 
 }
@@ -41,26 +42,30 @@
 	display: flex;
 	align-items: center;
 	gap: 25px;
-	img{
+	svg{
 		width: 16px;
 		height: 16px;
 	}
-	&__search {}
-
-	&__login {}
+	&__search,
+	&__cart,
+	&__login {
+		height: 16px;
+	}
 
 	&__cart {
-	
+		display: inline-flex;
+		align-items: center;
 	}
 }
 
 .search-icon {
+	margin-right: -5px;
 	display: flex;
 	align-items: center;
-	gap: 10px;
-	&__icon {
-		width: 14px;
-		height: 14px;
+	gap: 5px;
+	&__svg {
+		width: 16px;
+		height: 16px;
 		cursor: pointer;
 	}
 
