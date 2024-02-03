@@ -1030,17 +1030,17 @@ body._lock {
 .grid-filter__products {
   display: grid;
 }
-[data-grid-columns="3"] {
+[data-gridcolumns="3"] {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-[data-grid-columns="4"] {
+[data-gridcolumns="4"] {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-[data-grid-columns="5"] {
+[data-gridcolumns="5"] {
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
 }
@@ -1060,12 +1060,13 @@ body._lock {
   font-size: 10px;
   color: #858585;
   text-transform: uppercase;
+  padding: 0 5px;
 }
 .sort-grid__btn:hover {
   color: #151515;
 }
 .sort-grid__btn:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 3px;
 }
 .sort-grid__btn--current {
   color: #151515;

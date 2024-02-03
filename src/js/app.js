@@ -89,6 +89,9 @@ if (marketing) {
 	// setInterval(changeMarketing, delay);
 }
 
+
+//catalog filters accordeon 
+
 const filterBlock = document.querySelectorAll('.categories-filter__item');
 const hideFilters = document.querySelector('.hide-filter__btn');
 
@@ -105,3 +108,23 @@ hideFilters.addEventListener('click', (e) => {
 		item.classList.remove('open');
 	})
 } )
+
+//products grid change on button click
+
+const gridButtons = document.querySelector('.sort-grid__numbers');
+const filterProducts = document.querySelector('.grid-filter__products');
+
+gridButtons.addEventListener('click', function(e) {
+	const targetButton = e.target.closest('.sort-grid__btn');
+	const buttons = document.querySelectorAll('.sort-grid__btn');
+	buttons.forEach(button => {
+		button.classList.remove('sort-grid__btn--current', 'nav__link--current')
+	})
+	if (targetButton) {
+		targetButton.classList.add('sort-grid__btn--current', 'nav__link--current');
+		let dataBtn = targetButton.dataset.gridbtn;
+		filterProducts.dataset.gridcolumns = dataBtn;
+
+	}
+	e.preventDefault();
+})

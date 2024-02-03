@@ -313,18 +313,18 @@
 	&__item {}
 }
 
-[data-grid-columns="3"] {
+[data-gridcolumns="3"] {
 	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
 }
 
-[data-grid-columns="4"] {
+[data-gridcolumns="4"] {
 
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
 }
 
-[data-grid-columns="5"] {
+[data-gridcolumns="5"] {
 
 	grid-template-columns: repeat(5, 1fr);
 	gap: 15px;
@@ -347,11 +347,12 @@
 		font-size: 10px;
 		color: #858585;
 		text-transform: uppercase;
+		padding: 0 5px;
 		&:hover{
 			color: #151515;
 		}
 		&:not(:last-child){
-			margin-right: 8px;
+			margin-right: 3px;
 		}
 	}
 
