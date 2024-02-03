@@ -281,7 +281,7 @@
 										<span class="quantity">1</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -327,7 +327,7 @@
 										<span class="quantity">2</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -385,7 +385,7 @@
 										<span class="quantity">1</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -416,8 +416,168 @@
 								</li>
 							</ul>
 						</div>
-						<div class="filter__grid"></div>
+						<div class="filter__grid grid-filter">
+							<div class="grid-filter__top">
+								<div class="grid-filter__sort sort-grid">
+									<div class="sort-grid__numbers">
+										<span class="sort-grid__text">column numbers:</span>
+										<a href="" class="sort-grid__btn nav__link">3</a>
+										<a class="sort-grid__btn nav__link nav__link--current sort-grid__btn--current">4</a>
+										<a href="" class="sort-grid__btn nav__link">5</a>
+									</div>
+									<select class="sort-grid__select" name="" id="">
+										<option value="1">sort by latest</option>
+										<option value="2">sort by cheapest</option>
+									</select>
+								</div>
+								<div class="grid-filter__choice">
+									<button class="choice-filter__btn">
+										Accessories
+										<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+												 />
+										</svg>
+									</button>
+									<button class="choice-filter__btn">
+										28
+										<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+												 />
+										</svg>
+									</button>
+									<button class="choice-filter__clear">Clear all</button>
+								</div>
+							</div>
+							<div data-grid-columns="4" class="grid-filter__products block-products">
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/21.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--new">NEW</div>
+										<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+										<div class="content-block__price">$220.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/22.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/23.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Blue Raincoat</h3>
+										<div class="content-block__price">$250.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/24.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--best">BEST SELLER</div>
+										<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+										<div class="content-block__price">$80.00 - $125.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/25.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--best">BEST SELLER</div>
+										<h3 class="content-block__name">Shirt in organic cotton classic gingham</h3>
+										<div class="content-block__price">$59.50</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/26.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--hot">HOT</div>
+										<h3 class="content-block__name">Tailored indigo jumpsuit</h3>
+										<div class="content-block__price">$128.00 <span>165.00</span></div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/27.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--top">Top rate</div>
+										<h3 class="content-block__name">Triple stone drop earrings</h3>
+										<div class="content-block__price">$49.50</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/28.jpg" alt="shoes">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+										<div class="content-block__price">$158.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/29.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--only">Only a few left</div>
+										<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+										<div class="content-block__price">$220.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="@img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+							</div>
+						</div>
 					</div>
+				</div>
+			</div>
+			<div class="catalog__pages pages-catalog">
+				<div class="container container--catalog">
+					<div class="pages-catalog__number number-pages">
+						<button class="pages-catalog__buttons">1</button>
+						<button class="pages-catalog__buttons">2</button>
+						<button class="pages-catalog__buttons">3</button>
+					</div>
+					<button class="pages-catalog__next">next</button>
 				</div>
 			</div>
 		</main>

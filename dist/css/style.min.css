@@ -886,16 +886,14 @@ body._lock {
 }
 
 .filter__body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 19% auto;
+  gap: 96px;
 }
 
 .aside-filter {
-  flex: 0 1 30%;
   display: flex;
   flex-direction: column;
-}
-.aside-filter__hide {
-  flex: 0 1 30%;
 }
 .hide-filter {
   padding: 19px 0;
@@ -987,6 +985,9 @@ body._lock {
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
+.content-category__list--column {
+  grid-template-columns: 1fr;
+}
 .content-category__item {
   cursor: pointer;
   user-select: none;
@@ -1019,6 +1020,96 @@ body._lock {
   top: 3px;
   left: 0;
   border: 2px solid #aaaaaa;
+}
+
+.grid-filter__choice {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 5px;
+}
+.grid-filter__products {
+  display: grid;
+}
+[data-grid-columns="3"] {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+[data-grid-columns="4"] {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+[data-grid-columns="5"] {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.sort-grid {
+  padding: 19px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.sort-grid__text {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+.sort-grid__btn {
+  font-size: 10px;
+  color: #858585;
+  text-transform: uppercase;
+}
+.sort-grid__btn:hover {
+  color: #151515;
+}
+.sort-grid__btn:not(:last-child) {
+  margin-right: 8px;
+}
+.sort-grid__btn--current {
+  color: #151515;
+}
+.sort-grid__select {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.choice-filter__btn {
+  font-size: 13px;
+  font-weight: 500;
+  color: #454545;
+  background: #eeeeee;
+  transition: all 0.3s ease 0s;
+  border-radius: 12px;
+  padding: 2px 14px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.choice-filter__btn svg {
+  width: 8px;
+  height: 9px;
+  fill: #454545;
+  transition: all 0.3s ease 0s;
+}
+.choice-filter__btn:hover {
+  color: #ffffff;
+  background: #151515;
+}
+.choice-filter__btn:hover svg {
+  fill: #ffffff;
+}
+.choice-filter__clear {
+  margin-left: 5px;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+.choice-filter__clear:hover {
+  text-decoration: underline;
 }
 
 .footer {
