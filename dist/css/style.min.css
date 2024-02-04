@@ -1096,6 +1096,7 @@ body._lock {
   height: 9px;
   fill: #454545;
   transition: all 0.3s ease 0s;
+  pointer-events: none;
 }
 .choice-filter__btn:hover {
   color: #ffffff;
