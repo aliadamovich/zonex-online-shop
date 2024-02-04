@@ -228,8 +228,11 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		background: none;
-	}
 
+	}
+	.quantity{
+		display: none;
+	}
 	&__content {
 		padding-bottom: 38px;
 	}

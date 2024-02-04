@@ -973,6 +973,9 @@ body._lock {
   font-weight: 700;
   background: none;
 }
+.categories-filter .quantity {
+  display: none;
+}
 .categories-filter__content {
   padding-bottom: 38px;
 }

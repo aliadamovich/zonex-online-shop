@@ -106,6 +106,8 @@ filterBlock.forEach(item => {
 hideFilters.addEventListener('click', (e) => {
 	filterBlock.forEach(item => {
 		item.classList.remove('open');
+		item.dataset.counter = 0;
+		item.querySelector('.quantity').style.display = 'none';
 	})
 } )
 
@@ -135,22 +137,66 @@ gridButtons.addEventListener('click', function(e) {
 const categoryContainer = document.querySelector('.categories-filter');
 const categoryChosen = document.querySelector('.grid-filter__choice');
 
-
 categoryContainer.addEventListener('change', (e) => {
-		let closest = e.target.closest('.content-category__item');
 	
-		if (closest) {
-			let checkedInput = closest.querySelector('input').checked; 
-			let spanText = closest.querySelector('.content-category__name').textContent;
-			
-			if (checkedInput && spanText) {
-				addButton(categoryChosen, spanText);
+		let closestItem = e.target.closest('.content-category__item');
+	
+		if (closestItem) {
+			let checkedInput = closestItem.querySelector('input').checked; 
+			let spanText = closestItem.querySelector('.content-category__name').textContent;
 
+			const closestParent = closestItem.closest('.categories-filter__item');
+			const counterButton = closestParent.querySelector('.quantity');
+
+			if (!closestParent.dataset.counter) {
+				closestParent.dataset.counter = 0;
+			}
+
+			let counter = parseInt(closestParent.dataset.counter);
+
+			
+
+			if (checkedInput && spanText) {
+				
+				addButton(categoryChosen, spanText);
+				counter++;
+				if (counter > 0) {
+					counterButton.style.display = 'inline-flex';
+				}
+				counterButton.textContent = counter;
+			
+				closestParent.dataset.counter = counter;
 			} else {
 				autoRemoveButton(categoryChosen, spanText);
+				counter--;
+				counterButton.textContent = counter;
+				if (counter == 0) {
+					counterButton.style.display = 'none';
+				}
+				closestParent.dataset.counter = counter;
 			}
 		}
 	})
+
+	// function addCounters() {
+
+	// 		this.counter++;
+	// 		if (this.counter > 0) {
+	// 			this.counterButton.style.display = 'inline-flex';
+	// 		}
+	// 		this.counterButton.textContent = this.counter;
+	// 		this.closestParent.dataset.counter = this.counter;
+	// }
+
+	// function removeCounters() {
+	// 	this.counter--;
+	// 	this.counterButton.textContent = this.counter;
+	// 	if (this.counter == 0) {
+	// 		this.counterButton.style.display = 'none';
+	// 	}
+	// 	this.closestParent.dataset.counter = this.counter;
+	// }
+	
 
 //удаление выбранных категорий по нажатию на крестик и кнопку clear
 categoryChosen.addEventListener('click', removeButtonOnClick);
