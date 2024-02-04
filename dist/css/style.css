@@ -1024,8 +1024,9 @@ body._lock {
 
 .grid-filter__choice {
   margin-bottom: 20px;
-  display: flex;
+  display: none;
   gap: 5px;
+  flex-wrap: wrap;
 }
 .grid-filter__products {
   display: grid;
