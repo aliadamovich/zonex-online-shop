@@ -31,12 +31,28 @@
 		<a href="index.html" class="header__logo"><img src="img/logo.png" alt="logo"></a>
 		<div class="header__icons icons-header">
 			<label for="input-icon" class="icons-header__search search-icon">
-				<img class="search-icon__icon" src="img/search.png" alt="search">
+				<svg class="search-icon__svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+						stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
 				<input id="input-icon" class="search-icon__input" type="text" placeholder="search">
 			</label>
-			<a href="#" class="icons-header__login"><img src="img/user.png" alt=""></a>
+			<a href="#" class="icons-header__login">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+						stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</a>
 			<a href="#" class="icons-header__cart">
-				<img src="img/shopping-bag.png" alt="">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16 8H17.1597C18.1999 8 19.0664 8.79732 19.1528 9.83391L19.8195 17.8339C19.9167 18.9999 18.9965 20 17.8264 20H6.1736C5.00352 20 4.08334 18.9999 4.18051 17.8339L4.84718 9.83391C4.93356 8.79732 5.80009 8 6.84027 8H8M16 8H8M16 8L16 7C16 5.93913 15.5786 4.92172 14.8284 4.17157C14.0783 3.42143 13.0609 3 12 3C10.9391 3 9.92172 3.42143 9.17157 4.17157C8.42143 4.92172 8 5.93913 8 7L8 8M16 8L16 12M8 8L8 12"
+						stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
 				<span class="quantity">3</span>
 			</a>
 			</di>
@@ -120,61 +136,61 @@
 									<div class="categories-filter__content content-category">
 										<ul class="content-category__list">
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="All categories" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">All categories</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="T-Shirt" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">T-Shirt</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Accessories" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Accessories</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Summer" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Summer</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Dresses" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Dresses</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Shirts" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Shirts</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Coats" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Coats</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Jacket" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Jacket</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Clothes" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Clothes</span>
 												</label>
 											</li>
 											<li class="content-category__link">
-												<label class="content-category__item">
+												<label data-category="Short" class="content-category__item">
 													<input class="content-category__input" type="checkbox">
 													<span class="content-category__name">Short</span>
 												</label>
@@ -316,7 +332,7 @@
 										<span class="quantity">1</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -362,7 +378,7 @@
 										<span class="quantity">2</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -420,7 +436,7 @@
 										<span class="quantity">1</span>
 									</h2>
 									<div class="categories-filter__content content-category">
-										<ul class="content-category__list">
+										<ul class="content-category__list content-category__list--column">
 											<li class="content-category__link">
 												<label class="content-category__item">
 													<input class="content-category__input" type="checkbox">
@@ -451,8 +467,152 @@
 								</li>
 							</ul>
 						</div>
-						<div class="filter__grid"></div>
+						<div class="filter__grid grid-filter">
+							<div class="grid-filter__top">
+								<div class="grid-filter__sort sort-grid">
+									<div class="sort-grid__numbers">
+										<span class="sort-grid__text">column numbers:</span>
+										<a data-gridbtn="3" href="" class="sort-grid__btn nav__link">3</a>
+										<a data-gridbtn="4" href="" class="sort-grid__btn nav__link sort-grid__btn--current nav__link--current">4</a>
+										<a data-gridbtn="5" href="" class="sort-grid__btn nav__link">5</a>
+									</div>
+									<select class="sort-grid__select" name="" id="">
+										<option value="1">sort by latest</option>
+										<option value="2">sort by cheapest</option>
+									</select>
+								</div>
+								<div class="grid-filter__choice">
+									<button class="choice-filter__clear">Clear all</button>
+								</div>
+							</div>
+							<div data-gridcolumns="4" class="grid-filter__products block-products">
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/21.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--new">NEW</div>
+										<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+										<div class="content-block__price">$220.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/22.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/23.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Blue Raincoat</h3>
+										<div class="content-block__price">$250.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/24.jpg" alt="">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--best">BEST SELLER</div>
+										<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+										<div class="content-block__price">$80.00 - $125.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/25.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--best">BEST SELLER</div>
+										<h3 class="content-block__name">Shirt in organic cotton classic gingham</h3>
+										<div class="content-block__price">$59.50</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/26.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--hot">HOT</div>
+										<h3 class="content-block__name">Tailored indigo jumpsuit</h3>
+										<div class="content-block__price">$128.00 <span>165.00</span></div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/27.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--top">Top rate</div>
+										<h3 class="content-block__name">Triple stone drop earrings</h3>
+										<div class="content-block__price">$49.50</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/28.jpg" alt="shoes">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+										<div class="content-block__price">$158.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/29.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<div class="content-block__label content-block__label--only">Only a few left</div>
+										<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+										<div class="content-block__price">$220.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+								<a href="#" class="grid-filter__item block-products__item">
+									<div class="grid-products__image block-products__img">
+										<img src="img/30.jpg" alt="shirt">
+									</div>
+									<div class="grid-products__content block-products__content content-block">
+										<h3 class="content-block__name">Azure Tote</h3>
+										<div class="content-block__price">$290.00</div>
+									</div>
+								</a>
+							</div>
+						</div>
 					</div>
+				</div>
+			</div>
+			<div class="catalog__pages pages-catalog">
+				<div class="container container--catalog">
+					<div class="pages-catalog__number number-pages">
+						<button class="pages-catalog__buttons">1</button>
+						<button class="pages-catalog__buttons">2</button>
+						<button class="pages-catalog__buttons">3</button>
+					</div>
+					<button class="pages-catalog__next">next</button>
 				</div>
 			</div>
 		</main>
