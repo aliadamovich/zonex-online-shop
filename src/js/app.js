@@ -92,58 +92,100 @@ if (marketing) {
 
 //!catalog filters accordeon 
 
-const filterBlock = document.querySelectorAll('.categories-filter__item');
+const blockCategory = document.querySelectorAll('.categories-filter__item');
 const hideFilters = document.querySelector('.hide-filter__btn');
 
-filterBlock.forEach(item => {
-	item.addEventListener('click', (e) => {
-		if (e.target.closest('.categories-filter__head')) {
-			item.classList.toggle('open');
-		}
-	})
-})
 
-hideFilters.addEventListener('click', (e) => {
-	filterBlock.forEach(item => {
-		item.classList.remove('open');
-		item.dataset.counter = 0;
-		item.querySelector('.quantity').style.display = 'none';
+const categoryContainer = document.querySelector('.categories-filter');
+const categoryChosen = document.querySelector('.grid-filter__choice');
+
+//тоггл класса по нажатию на плюсик категории
+if (blockCategory.length > 0) {
+
+	blockCategory.forEach(item => {
+		item.addEventListener('click', (e) => {
+			if (e.target.closest('.categories-filter__head')) {
+				item.classList.toggle('open');
+			}
+		})
 	})
-} )
+}
+
+//скрывание всех категорий по нажатию на кнопку hide filters
+if (hideFilters) {
+	hideFilters.addEventListener('click', clearAll)
+}
 
 //!products grid change on button click
-
 
 const gridButtons = document.querySelector('.sort-grid__numbers');
 const filterProducts = document.querySelector('.grid-filter__products');
 
-gridButtons.addEventListener('click', function(e) {
-	const targetButton = e.target.closest('.sort-grid__btn');
-	const buttons = document.querySelectorAll('.sort-grid__btn');
-	buttons.forEach(button => {
-		button.classList.remove('sort-grid__btn--current', 'nav__link--current')
+if (gridButtons) {
+	gridButtons.addEventListener('click', function (e) {
+
+		const targetButton = e.target.closest('.sort-grid__btn');
+		const buttons = document.querySelectorAll('.sort-grid__btn');
+		buttons.forEach(button => {
+			button.classList.remove('sort-grid__btn--current', 'nav__link--current')
+		})
+		if (targetButton) {
+			targetButton.classList.add('sort-grid__btn--current', 'nav__link--current');
+			let dataBtn = targetButton.dataset.gridbtn;
+			filterProducts.dataset.gridcolumns = dataBtn;
+
+		}
+		e.preventDefault();
 	})
-	if (targetButton) {
-		targetButton.classList.add('sort-grid__btn--current', 'nav__link--current');
-		let dataBtn = targetButton.dataset.gridbtn;
-		filterProducts.dataset.gridcolumns = dataBtn;
+}
 
-	}
-	e.preventDefault();
-})
+//*** функция clear all (очищает чекбоксы, удаляет кнопки, скрывает hide filters)
 
+function clearAll(e) {
+//отщелкиваем чекбоксы, убираем класс active
+	const activeInputs = categoryContainer.querySelectorAll('input');
+	
+	activeInputs.forEach(input => {
+		// const closest = input.closest('.contect-category__item');
+		// console.log(closest);
+		
+		// if (input.checked) {
+		// 	console.log(input.closest('.contect-category__item'));
+		// 	input.closest('.contect-category__item').classList.remove('active_checkbox');
+		// }
+		input.checked = false;
+	
+	})
+	//убираем счетчик span
+	blockCategory.forEach(item => {
+		item.classList.remove('open');
+		item.dataset.counter = 0;
+		item.querySelector('.quantity').style.display = 'none';
+	})
+//удаляем кнопки в центре
+	const activeButtons = categoryChosen.querySelectorAll('.choice-filter__btn');
+	activeButtons.forEach(button => {
+		button.remove();
+		categoryChosen.style.display = 'none';
+	})
+//скрываем кнопку hide filters
+	hideFilters.closest('.hide-filter').style.display = 'none';
+}
+//** */
 
 //! categories check-boxes
-const categoryContainer = document.querySelector('.categories-filter');
-const categoryChosen = document.querySelector('.grid-filter__choice');
+// const categoryContainer = document.querySelector('.categories-filter');
 
-categoryContainer.addEventListener('change', (e) => {
-	
+if (categoryContainer) {
+
+	categoryContainer.addEventListener('change', (e) => {
+
 		let closestItem = e.target.closest('.content-category__item');
-	
+
 		if (closestItem) {
-			let checkedInput = closestItem.querySelector('input').checked; 
+			let checkedInput = closestItem.querySelector('input').checked;
 			let spanText = closestItem.querySelector('.content-category__name').textContent;
+
 
 			const closestParent = closestItem.closest('.categories-filter__item');
 			const counterButton = closestParent.querySelector('.quantity');
@@ -151,23 +193,26 @@ categoryContainer.addEventListener('change', (e) => {
 			if (!closestParent.dataset.counter) {
 				closestParent.dataset.counter = 0;
 			}
-
 			let counter = parseInt(closestParent.dataset.counter);
 
-			
-
 			if (checkedInput && spanText) {
-				
+				closestItem.classList.add('active_checkbox');
+
 				addButton(categoryChosen, spanText);
+
 				counter++;
 				if (counter > 0) {
 					counterButton.style.display = 'inline-flex';
 				}
 				counterButton.textContent = counter;
-			
+
 				closestParent.dataset.counter = counter;
+
 			} else {
+
+				closestItem.classList.remove('active_checkbox');
 				autoRemoveButton(categoryChosen, spanText);
+
 				counter--;
 				counterButton.textContent = counter;
 				if (counter == 0) {
@@ -175,31 +220,47 @@ categoryContainer.addEventListener('change', (e) => {
 				}
 				closestParent.dataset.counter = counter;
 			}
+
+			let activeInputs = document.querySelectorAll('.active_checkbox');
+
+			if (activeInputs.length > 0) {
+				hideFilters.closest('.hide-filter').style.display = 'block';
+				categoryChosen.style.display = 'inline-flex';
+			} else {
+				hideFilters.closest('.hide-filter').style.display = 'none';
+				categoryChosen.style.display = 'none';
+			}
+
 		}
 	})
+}
+
 
 	// function addCounters() {
 
-	// 		this.counter++;
-	// 		if (this.counter > 0) {
-	// 			this.counterButton.style.display = 'inline-flex';
+	// 		counter++;
+	// 		if (counter > 0) {
+	// 			counterButton.style.display = 'inline-flex';
 	// 		}
-	// 		this.counterButton.textContent = this.counter;
-	// 		this.closestParent.dataset.counter = this.counter;
+	// 		counterButton.textContent = counter;
+	// 		closestParent.dataset.counter = counter;
 	// }
 
 	// function removeCounters() {
-	// 	this.counter--;
-	// 	this.counterButton.textContent = this.counter;
-	// 	if (this.counter == 0) {
-	// 		this.counterButton.style.display = 'none';
+	// 	counter--;
+	// 	counterButton.textContent = counter;
+	// 	if (counter == 0) {
+	// 		counterButton.style.display = 'none';
 	// 	}
-	// 	this.closestParent.dataset.counter = this.counter;
+	// 	closestParent.dataset.counter = counter;
 	// }
 	
 
 //удаление выбранных категорий по нажатию на крестик и кнопку clear
-categoryChosen.addEventListener('click', removeButtonOnClick);
+if (categoryChosen) {
+	categoryChosen.addEventListener('click', removeButtonOnClick);
+}
+
 
 //ф-ция для добавления в HTML кнопок категорий
 function addButton(parent, text) {
@@ -207,7 +268,7 @@ function addButton(parent, text) {
 
 	parent.insertAdjacentHTML(
 		'afterbegin',
-		`<button class="choice-filter__btn">
+		`<button class="choice-filter__btn" data-choice="${text}">
 	${text}
 		<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
@@ -220,30 +281,18 @@ function addButton(parent, text) {
 
 
 function removeButtonOnClick(event) {
+
 	if (event.target.classList.contains('choice-filter__btn')) {
 		event.target.remove();
 
 		let text = event.target.textContent.trim();
 		const relatedCheckbox = document.querySelector(`[data-category="${text}"]`);
 		relatedCheckbox.querySelector('input').checked = false;
+		relatedCheckbox.classList.remove('active_checkbox');
 	}
 
-	let children = Array.from(event.currentTarget.children);
-
 	if (event.target.classList.contains('choice-filter__clear')) {
-		if (children.length > 0) {
-			children.forEach(child => {
-				if (!child.classList.contains('choice-filter__clear'))
-				child.remove();
-				event.currentTarget.style.display = 'none';
-
-				const boxes = categoryContainer.querySelectorAll('input');
-				boxes.forEach(el => {
-					el.checked = false
-				})
-			})
-		}
-		event.currentTarget.style.display = 'none';
+		clearAll();
 	}
 
 	if (event.currentTarget.children.length === 1) {
@@ -263,11 +312,24 @@ function autoRemoveButton (parent, text) {
 			}
 		})
 	}
-	if (catButton.length === 1) {
-		parent.style.display = 'none';
-	}
+	// if (catButton.length === 1) {
+	// 	parent.style.display = 'none';
+	// }
+
 }
 
+//*
+function Arr (text) {
+	let checked = document.querySelector('input').checked;
+	let closest = checked.closest('.content-categry__item');
+	let button = document.querySelector('.choice-filter__btn');
+	let buttonData = button.textContent.trim();
+	
+	if (checked && buttonData === closest.dataset) {
+		button.remove();
+	}
+}
+//*
 
 // class CategoryFilter {
 // 	constructor() {
