@@ -178,51 +178,30 @@ function clearAll(e) {
 
 if (categoryContainer) {
 
-	categoryContainer.addEventListener('change', (e) => {
-
+	categoryContainer.addEventListener('change', function (e){
+		
 		let closestItem = e.target.closest('.content-category__item');
 
 		if (closestItem) {
 			let checkedInput = closestItem.querySelector('input').checked;
 			let spanText = closestItem.querySelector('.content-category__name').textContent;
 
-
-			const closestParent = closestItem.closest('.categories-filter__item');
-			const counterButton = closestParent.querySelector('.quantity');
-
-			if (!closestParent.dataset.counter) {
-				closestParent.dataset.counter = 0;
-			}
-			let counter = parseInt(closestParent.dataset.counter);
-
-			if (checkedInput && spanText) {
+			if (checkedInput) {
 				closestItem.classList.add('active_checkbox');
 
 				addButton(categoryChosen, spanText);
-
-				counter++;
-				if (counter > 0) {
-					counterButton.style.display = 'inline-flex';
-				}
-				counterButton.textContent = counter;
-
-				closestParent.dataset.counter = counter;
+				updateCounters(closestItem, true);
 
 			} else {
 
 				closestItem.classList.remove('active_checkbox');
 				autoRemoveButton(categoryChosen, spanText);
-
-				counter--;
-				counterButton.textContent = counter;
-				if (counter == 0) {
-					counterButton.style.display = 'none';
-				}
-				closestParent.dataset.counter = counter;
+				updateCounters(closestItem, false);
 			}
 
 			let activeInputs = document.querySelectorAll('.active_checkbox');
-
+			console.log(activeInputs);
+			
 			if (activeInputs.length > 0) {
 				hideFilters.closest('.hide-filter').style.display = 'block';
 				categoryChosen.style.display = 'inline-flex';
@@ -236,25 +215,31 @@ if (categoryContainer) {
 }
 
 
-	// function addCounters() {
+function updateCounters(item, increment) {
+		
+		const closestParent = item.closest('.categories-filter__item');
+		const counterSpan = closestParent.querySelector('.quantity');
 
-	// 		counter++;
-	// 		if (counter > 0) {
-	// 			counterButton.style.display = 'inline-flex';
-	// 		}
-	// 		counterButton.textContent = counter;
-	// 		closestParent.dataset.counter = counter;
-	// }
+		if (!closestParent.dataset.counter) {
+			closestParent.dataset.counter = 0;
+		}
+		let counter = parseInt(closestParent.dataset.counter);
 
-	// function removeCounters() {
-	// 	counter--;
-	// 	counterButton.textContent = counter;
-	// 	if (counter == 0) {
-	// 		counterButton.style.display = 'none';
-	// 	}
-	// 	closestParent.dataset.counter = counter;
-	// }
-	
+		if (increment) {
+			counter++;
+		} else {
+			counter--;
+		}
+			
+		if (counter > 0) {
+			counterSpan.style.display = 'inline-flex';
+		} else {
+			counterSpan.style.display = 'none';
+		}
+			counterSpan.textContent = counter;
+			closestParent.dataset.counter = counter;
+	}
+
 
 //удаление выбранных категорий по нажатию на крестик и кнопку clear
 if (categoryChosen) {
@@ -281,7 +266,7 @@ function addButton(parent, text) {
 
 
 function removeButtonOnClick(event) {
-
+	
 	if (event.target.classList.contains('choice-filter__btn')) {
 		event.target.remove();
 
@@ -289,6 +274,7 @@ function removeButtonOnClick(event) {
 		const relatedCheckbox = document.querySelector(`[data-category="${text}"]`);
 		relatedCheckbox.querySelector('input').checked = false;
 		relatedCheckbox.classList.remove('active_checkbox');
+		updateCounters(relatedCheckbox, false)
 	}
 
 	if (event.target.classList.contains('choice-filter__clear')) {
@@ -303,7 +289,8 @@ function removeButtonOnClick(event) {
 
 // удаление кнопок при отщелкивании чекбокса
 function autoRemoveButton (parent, text) {
-	let catButton = Array.from(parent.querySelectorAll('.choice-filter__btn'));
+	
+	const catButton = Array.from(parent.querySelectorAll('.choice-filter__btn'));
 	if (catButton.length > 0) {
 		catButton.forEach(button => {
 			let buttonData = button.textContent.trimLeft().trimRight();
@@ -312,24 +299,9 @@ function autoRemoveButton (parent, text) {
 			}
 		})
 	}
-	// if (catButton.length === 1) {
-	// 	parent.style.display = 'none';
-	// }
-
 }
 
-//*
-function Arr (text) {
-	let checked = document.querySelector('input').checked;
-	let closest = checked.closest('.content-categry__item');
-	let button = document.querySelector('.choice-filter__btn');
-	let buttonData = button.textContent.trim();
-	
-	if (checked && buttonData === closest.dataset) {
-		button.remove();
-	}
-}
-//*
+
 
 // class CategoryFilter {
 // 	constructor() {
