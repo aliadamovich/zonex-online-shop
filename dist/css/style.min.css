@@ -329,25 +329,53 @@ body._lock {
   z-index: 100;
 }
 .header__container {
+  position: relative;
   height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .header__container {
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .header__logo {
+    position: fixed;
+    left: 20px;
+    top: 33px;
+  }
+  .header__logo img {
+    height: 16px;
+  }
 }
 .menu__list {
   gap: 25px;
 }
 .icons-header {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 25px;
+  height: 16px;
 }
 .icons-header svg {
+  stroke: #151515;
   width: 16px;
   height: 16px;
 }
-.icons-header__search, .icons-header__cart, .icons-header__login {
-  height: 16px;
+@media (max-width: 767px) {
+  .icons-header {
+    gap: 35px;
+  }
+  .icons-header svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+.icons-header__login {
+  font-size: 16px;
+  all: initial;
 }
 .icons-header__cart {
   display: inline-flex;
@@ -382,32 +410,25 @@ body._lock {
 }
 
 @media (max-width: 767px) {
+  menu {
+    position: fixed;
+  }
   .menu__body {
     position: fixed;
     width: 100%;
     height: 100%;
-    left: 0;
-    top: -100%;
+    top: 0;
+    right: -200%;
     overflow: auto;
-    background-color: #4d4959;
+    background-color: white;
     padding: 150px 0px 20px 0px;
-    transition: top 0.3s ease 0s;
+    transition: right 0.3s ease 0s;
   }
   .menu__body._active {
-    top: 0;
-  }
-  .menu__body:before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 110px;
-    background-color: #4d4959;
-    z-index: 2;
+    right: 0;
   }
   .menu__link {
-    color: white;
+    color: #151515;
     font-size: 20px;
   }
   .menu__list {
@@ -441,7 +462,7 @@ body._lock {
     height: 2px;
     width: 100%;
     transition: all 0.3s ease 0s;
-    background-color: #4D465B;
+    background-color: #151515;
   }
   .menu__icon span:first-child {
     top: 0px;
@@ -518,7 +539,6 @@ body._lock {
 
 .cover {
   height: 100vh;
-  min-height: 700px;
   width: 100%;
   position: relative;
 }
@@ -836,6 +856,7 @@ body._lock {
 }
 .cover-catalog__custom-nav .nav-left,
 .cover-catalog__custom-nav .nav-right {
+  cursor: pointer;
   padding: 14px;
   border: 1px solid #151515;
   transition: all 0.3s ease 0s;

@@ -70,6 +70,7 @@
 	transform: translateY(-50%);
 	.nav-left,
 	.nav-right{
+		cursor: pointer;
 		padding: 14px;
 		border: 1px solid #151515;
 		transition: all 0.3s ease 0s;

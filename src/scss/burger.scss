@@ -2,37 +2,41 @@
 //!БУРГЕР=========================================================================================
 
 @media (max-width:767px) {
+
+	menu{
+		position: fixed;
+	}
 	.menu__body {
 		position: fixed;
 		width: 100%;
 		height: 100%;
-		left: 0;
-		top: -100%;
+		top: 0;
+		right: -200%;
 		overflow: auto;
-		background-color: #4d4959;
+		background-color: #ffff;
 		padding: 150px 0px 20px 0px;
-		transition: top 0.3s ease 0s;
+		transition: right 0.3s ease 0s;
 
 		&._active {
-			top: 0;
+			right: 0;
 		}
 
 		//*плашка для того чтобы пункты меню не наезжали на логотип при скролле
-		&:before{
-			content: '';
-			position: fixed;
-			width: 100%;
-			top: 0;
-			left: 0;
-			height: 110px;
-		background-color: #4d4959;
-			z-index: 2;
-		}
+		// &:before{
+		// 	content: '';
+		// 	position: fixed;
+		// 	width: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// 	height: 110px;
+		// background-color: #4d4959;
+		// 	z-index: 2;
+		// }
 		//*=======================
 	
 }
 	.menu__link {
-		color: white;
+		color: #151515;
 		font-size: 20px;
 	}
 
@@ -40,6 +44,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+
 	}
 
 	.menu__item {
@@ -73,7 +78,7 @@
 		height: 2px;
 		width: 100%;
 		transition: all 0.3s ease 0s;
-		background-color: #4D465B;
+		background-color: #151515;
 		&:first-child {
 			top: 0px;
 		}

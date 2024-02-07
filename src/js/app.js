@@ -1,8 +1,35 @@
 import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
+//*burger
+const iconMenu = document.querySelector('.menu__icon');
+const spaceCover = document.querySelector('.space__cover');
+const menuBody = document.querySelector('.menu__body');
 
-//swiper
+if (iconMenu) {
+	iconMenu.addEventListener("click", function (e) {
+		if (menuBody.classList.contains('_active')) {
+			document.body.classList.remove('_lock');
+			iconMenu.classList.remove('_active');
+			menuBody.classList.remove('_active');
+		} else {
+			document.body.classList.add('_lock');
+			iconMenu.classList.add('_active');
+			menuBody.classList.add('_active');
+		}
+	});
+}
+spaceCover.addEventListener('click', () => {
+
+	if (menuBody.classList.contains('_active')) {
+		document.body.classList.remove('_lock');
+		iconMenu.classList.remove('_active');
+		menuBody.classList.remove('_active');
+	}
+})
+
+
+//*swiper
 const swiperMain = new Swiper('.cover__swiper', {
 	loop: true,
 		pagination: {
@@ -289,7 +316,6 @@ function removeButtonOnClick(event) {
 
 // удаление кнопок при отщелкивании чекбокса
 function autoRemoveButton (parent, text) {
-	
 	const catButton = Array.from(parent.querySelectorAll('.choice-filter__btn'));
 	if (catButton.length > 0) {
 		catButton.forEach(button => {

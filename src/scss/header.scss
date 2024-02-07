@@ -7,16 +7,31 @@
 	z-index: 100;
 	
 	&__container{
+		position: relative;
 		height: 90px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		@media (max-width:767px){
+			justify-content: center;
+		};
 	}
 	&__menu {}
 
-	&__logo {}
+	&__logo {
+		@media (max-width:767px){
+			position: fixed;
+			left: 20px;
+			top: 33px;
+			img{
+				height: 16px;
+			}
+		};
+	}
 
-	&__icons {}
+	&__icons {
+
+	}
 }
 
 .menu {
@@ -40,16 +55,27 @@
 
 .icons-header {
 	display: flex;
-	align-items: center;
+	align-items: start;
 	gap: 25px;
+	height: 16px;
 	svg{
+		stroke: #151515;
 		width: 16px;
 		height: 16px;
 	}
-	&__search,
-	&__cart,
+	@media (max-width:767px){
+
+		gap: 35px;
+		svg{
+			width: 18px;
+			height: 18px;
+		}
+	};
+	// &__search,
+	// &__cart,
 	&__login {
-		height: 16px;
+		font-size: 16px;
+		all: initial;
 	}
 
 	&__cart {
