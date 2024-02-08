@@ -1,0 +1,40 @@
+@media (max-width:992px){
+
+	.filter__body{
+		grid-template-columns: 1fr;
+	}
+	.aside-filter{
+		@media (max-width:992px) {
+			position: fixed;
+			z-index: 100;
+			width: 60%;
+			height: 100%;
+			top: 0;
+			right: -200%;
+			overflow: auto;
+			background-color: #ffff;
+			padding: 110px 50px 20px 50px;
+			transition: right 0.3s ease 0s;
+
+		&._active {
+			right: 0;
+			}
+		}
+	}
+		.categories-filter{
+		}
+
+		.catalog__icon {
+			z-index: 101;
+			position: absolute;
+			cursor: pointer;
+			top: 7%;
+			right: 10%;
+
+			svg {
+				width: 18px;
+				height: 18px;
+				fill: #151515;
+			}
+		}
+}
