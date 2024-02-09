@@ -3,7 +3,7 @@ flsFunctions.isWebp();
 
 //*burger
 const iconMenu = document.querySelector('.menu__icon');
-const spaceCover = document.querySelector('.space__cover');
+const spaceCover = document.querySelectorAll('.space__cover');
 const menuBody = document.querySelector('.menu__body');
 
 if (iconMenu) {
@@ -19,14 +19,22 @@ if (iconMenu) {
 		}
 	});
 }
-spaceCover.addEventListener('click', () => {
+spaceCover.forEach(item => {
+	item.addEventListener('click', () => {
 
-	if (menuBody.classList.contains('_active')) {
-		document.body.classList.remove('_lock');
-		iconMenu.classList.remove('_active');
-		menuBody.classList.remove('_active');
-	}
+		if (menuBody.classList.contains('_active')) {
+			document.body.classList.remove('_lock');
+			iconMenu.classList.remove('_active');
+			menuBody.classList.remove('_active');
+		}
+
+		if (asideFilter.classList.contains('_active')) {
+			asideFilter.classList.remove('_active');
+			document.body.classList.remove('_lock');
+		}
+	})
 })
+
 
 //*catalog-burger
 const iconCatalog = document.querySelector('.catalog__icon');
@@ -66,6 +74,10 @@ const swiperCatalog = new Swiper('.cover-catalog__slider', {
 		nextEl: '#nav-right',
 		prevEl: '#nav-left',
 	},
+	pagination: {
+		el: '.cover-catalog__pag',
+	},
+
 });
 
 //Marketing pop-up
@@ -182,11 +194,28 @@ if (gridButtons) {
 			targetButton.classList.add('sort-grid__btn--current', 'nav__link--current');
 			let dataBtn = targetButton.dataset.gridbtn;
 			filterProducts.dataset.gridcolumns = dataBtn;
-
 		}
 		e.preventDefault();
 	})
 }
+
+window.addEventListener('resize', resizeGallery);
+
+function resizeGallery(e) {
+	if (window.innerWidth <= 768 && window.innerWidth > 500) {
+		filterProducts.dataset.gridcolumns = 3;
+	} else if (window.innerWidth <= 500) {
+		filterProducts.dataset.gridcolumns = 2;
+	}
+	else {
+		const currentButtn = Array.from(gridButtons.querySelectorAll('.sort-grid__btn')).find(item => 
+		item.classList.contains('sort-grid__btn--current', 'nav__link--current')
+	);
+		filterProducts.dataset.gridcolumns = currentButtn.dataset.gridbtn;
+	}
+}
+
+resizeGallery();
 
 //*** функция clear all (очищает чекбоксы, удаляет кнопки, скрывает hide filters)
 

@@ -16,7 +16,7 @@
 		background-color: #ffff;
 		padding: 150px 0px 20px 0px;
 		transition: right 0.3s ease 0s;
-
+		z-index: 100;
 		&._active {
 			right: 0;
 		}
@@ -61,7 +61,7 @@
 	}
 
 	.menu__icon {
-		z-index: 5;
+		z-index: 101;
 		display: block;
 		position: absolute;
 		top: 33px;

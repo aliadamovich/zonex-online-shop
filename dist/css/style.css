@@ -205,6 +205,22 @@ main {
 body._lock {
   overflow: hidden;
 }
+body._lock .space__cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: 99;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.space__cover {
+  pointer-events: none;
+  opacity: 0;
+}
 
 .ibg {
   position: relative;
@@ -343,6 +359,12 @@ body._lock {
   align-items: center;
   padding: 2px 45px;
   transition: all 0.3s ease 0s;
+  max-width: 300px;
+}
+@media (max-width: 550px) {
+  .block__button {
+    max-width: 250px;
+  }
 }
 .block__button--black {
   background: #151515;
@@ -465,6 +487,10 @@ body._lock {
   width: 100px;
 }
 
+.header__catalog {
+  margin-top: 40px;
+}
+
 @media (max-width: 992px) {
   .menu__body {
     position: fixed;
@@ -476,6 +502,7 @@ body._lock {
     background-color: white;
     padding: 150px 0px 20px 0px;
     transition: right 0.3s ease 0s;
+    z-index: 100;
   }
   .menu__body._active {
     right: 0;
@@ -499,7 +526,7 @@ body._lock {
     padding: 0px 0px 0px 0px;
   }
   .menu__icon {
-    z-index: 5;
+    z-index: 101;
     display: block;
     position: absolute;
     top: 33px;
@@ -987,6 +1014,22 @@ body._lock {
   object-fit: cover;
 }
 
+.promo-catalog {
+  margin-bottom: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promo-catalog__text {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .cover-catalog {
   padding-top: 90px;
 }
@@ -999,20 +1042,63 @@ body._lock {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 768px) {
+  .slide-catalog__content {
+    padding: 100px 0 100px 40px;
+  }
+}
+@media (max-width: 425px) {
+  .slide-catalog__content {
+    padding: 120px 20px;
+  }
+}
 .slide-catalog__title {
   font-size: 36px;
+  font-size: calc(18px + 18 * (100vw - 320px) / 1280);
   font-weight: 700;
   margin-bottom: 21px;
+  max-width: 300px;
+}
+@media (max-width: 768px) {
+  .slide-catalog__title {
+    background: #fff;
+    padding: 10px;
+  }
+}
+@media (max-width: 550px) {
+  .slide-catalog__title {
+    max-width: 250px;
+  }
 }
 .slide-catalog__text {
   font-size: 15px;
+  font-size: calc(12px + 3 * (100vw - 320px) / 1280);
   line-height: 1.2;
   color: #454545;
   margin-bottom: 46px;
   max-width: 385px;
 }
-.slide-catalog__buttons > *:not(:last-child) {
-  margin-right: 15px;
+@media (max-width: 768px) {
+  .slide-catalog__text {
+    background: #fff;
+    padding: 5px;
+    max-width: 300px;
+  }
+}
+@media (max-width: 550px) {
+  .slide-catalog__text {
+    display: none;
+  }
+}
+.slide-catalog__buttons {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .slide-catalog__buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 .slide-catalog__img {
   position: absolute;
@@ -1020,6 +1106,11 @@ body._lock {
   height: 100%;
   top: 0;
   left: 0;
+}
+@media (max-width: 768px) {
+  .slide-catalog__img img {
+    object-position: 70% 0;
+  }
 }
 
 .cover-catalog__custom-nav {
@@ -1032,6 +1123,11 @@ body._lock {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  .cover-catalog__custom-nav {
+    display: none;
+  }
 }
 .cover-catalog__custom-nav .nav-left,
 .cover-catalog__custom-nav .nav-right {
@@ -1051,6 +1147,25 @@ body._lock {
 .cover-catalog__custom-nav svg {
   width: 16px;
   height: 16px;
+}
+
+.cover-catalog__pag {
+  display: none;
+}
+.cover-catalog__pag .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #6d6b6b;
+  border: none;
+}
+.cover-catalog__pag .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #3c3b3b;
+}
+@media (max-width: 768px) {
+  .cover-catalog__pag {
+    display: block;
+  }
 }
 
 .breadcrumbs-catalog {
@@ -1090,6 +1205,12 @@ body._lock {
   display: grid;
   grid-template-columns: 19% auto;
   gap: 96px;
+}
+@media (max-width: 1300px) {
+  .filter__body {
+    grid-template-columns: 22% auto;
+    gap: 60px;
+  }
 }
 
 .aside-filter {
@@ -1227,6 +1348,10 @@ body._lock {
   border: 2px solid #aaaaaa;
 }
 
+.catalog__icon {
+  display: none;
+}
+
 .grid-filter__choice {
   margin-bottom: 20px;
   display: none;
@@ -1236,9 +1361,14 @@ body._lock {
 .grid-filter__products {
   display: grid;
 }
+[data-gridcolumns="2"] {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
 [data-gridcolumns="3"] {
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
 }
 
 [data-gridcolumns="4"] {
@@ -1259,6 +1389,11 @@ body._lock {
 @media (max-width: 992px) {
   .sort-grid {
     justify-content: space-evenly;
+  }
+}
+@media (max-width: 768px) {
+  .sort-grid__numbers {
+    display: none;
   }
 }
 .sort-grid__text {
@@ -1337,6 +1472,45 @@ body._lock {
   text-decoration: underline;
 }
 
+.pages-catalog {
+  padding-top: 45px;
+}
+.pages-catalog__number {
+  text-align: center;
+}
+.pages-catalog__buttons {
+  font-weight: 700;
+  font-size: 10px;
+  height: 40px;
+  width: 40px;
+  background: white;
+  border: 2px solid #eeeeee;
+  color: #858585;
+  text-transform: uppercase;
+}
+.pages-catalog__buttons > *:not(:last-child) {
+  margin-right: 6px;
+}
+.pages-catalog__buttons:hover {
+  background: #151515;
+  color: #fff;
+  border: 2px solid #151515;
+}
+.pages-catalog__next {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 20px 2px 15px;
+  width: 80px;
+}
+.pages-catalog__next::before {
+  content: "❯";
+  position: absolute;
+  font-size: 10px;
+  display: block;
+  margin-left: 30px;
+}
+
 @media (max-width: 992px) {
   .filter__body {
     grid-template-columns: 1fr;
@@ -1355,12 +1529,26 @@ body._lock {
     padding: 110px 50px 20px 50px;
     transition: right 0.3s ease 0s;
   }
+}
+@media (max-width: 992px) and (max-width: 992px) and (max-width: 666px) {
+  .aside-filter {
+    width: 80%;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) and (max-width: 425px) {
+  .aside-filter {
+    width: 85%;
+    padding: 80px 20px 20px 20px;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) {
   .aside-filter._active {
     right: 0;
   }
 }
 @media (max-width: 992px) {
   .catalog__icon {
+    display: block;
     z-index: 101;
     position: absolute;
     cursor: pointer;
