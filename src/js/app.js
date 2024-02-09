@@ -49,13 +49,16 @@ if (buttonFilter) {
 		}
 	})
 }
+if (iconCatalog) {
+	iconCatalog.addEventListener('click', () => {
+		if (asideFilter.classList.contains('_active')) {
+			asideFilter.classList.remove('_active');
+			document.body.classList.remove('_lock');
+		}
+	})
+}
 
-iconCatalog.addEventListener('click', () => {
-	if (asideFilter.classList.contains('_active')) {
-		asideFilter.classList.remove('_active');
-		document.body.classList.remove('_lock');
-	}
-})
+
 
 
 
@@ -80,7 +83,7 @@ const swiperCatalog = new Swiper('.cover-catalog__slider', {
 
 });
 
-//Marketing pop-up
+//*Marketing pop-up
 const marketing = document.querySelector('.marketing');
 
 if (marketing) {
@@ -150,6 +153,18 @@ if (marketing) {
 	// setInterval(changeMarketing, delay);
 }
 
+//*Promo closing
+
+const promo = document.querySelector('.promo-catalog');
+
+if (promo) {
+	promo.addEventListener('click', (e) => {
+		if (e.target.closest('.promo-catalog__close') && !e.currentTarget.classList.contains('promo-catalog__closed')) {
+			e.currentTarget.classList.add('promo-catalog__closed');
+			document.querySelector('.cover-catalog').style.marginTop = '0';
+		}
+	})
+}
 
 //!catalog filters accordeon 
 
@@ -216,6 +231,23 @@ function resizeGallery(e) {
 }
 
 resizeGallery();
+
+//*select 'sort by'
+
+const customSelect = document.querySelectorAll('.custom-select');
+
+if (customSelect.length > 0) {
+	customSelect.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.currentTarget.classList.toggle('custom-select--active')
+
+		if (e.target.classList.contains('custom-select__item')) {
+			let text = e.target.textContent;
+			e.currentTarget.querySelector('.custom-select__top').textContent = text;
+		}
+		})
+	})
+}
 
 //*** функция clear all (очищает чекбоксы, удаляет кнопки, скрывает hide filters)
 

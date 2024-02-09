@@ -284,6 +284,7 @@ body._lock .space__cover {
 }
 
 .block-products__item {
+  position: relative;
   display: grid;
   grid-auto-flow: row;
   grid-template: auto 1fr/1fr;
@@ -305,6 +306,23 @@ body._lock .space__cover {
   left: 0;
   object-fit: cover;
 }
+.block-products__sale {
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  left: 5%;
+  height: 24px;
+  border: 2px solid #151515;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+}
+
 .content-block {
   padding: 0 5px;
 }
@@ -333,6 +351,7 @@ body._lock .space__cover {
   font-weight: 500;
   color: #959595;
   margin-left: 5px;
+  text-decoration: line-through;
 }
 .content-block__label--new {
   background: url("../img/thunder.png") left/12px 12px no-repeat;
@@ -404,11 +423,17 @@ body._lock .space__cover {
     justify-content: center;
   }
 }
+.header__logo {
+  position: absolute;
+  top: 33px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 @media (max-width: 992px) {
   .header__logo {
-    position: absolute;
     left: 30px;
     top: 33px;
+    transform: translateX(0);
   }
   .header__logo img {
     height: 18px;
@@ -467,6 +492,7 @@ body._lock .space__cover {
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
 }
 .search-icon__svg {
   width: 16px;
@@ -485,10 +511,6 @@ body._lock .space__cover {
 }
 .search-icon__input:focus {
   width: 100px;
-}
-
-.header__catalog {
-  margin-top: 40px;
 }
 
 @media (max-width: 992px) {
@@ -1015,23 +1037,34 @@ body._lock .space__cover {
 }
 
 .promo-catalog {
-  margin-bottom: 40px;
-  position: fixed;
-  top: 0;
+  position: relative;
   width: 100%;
   background: #111;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: height 0.3s ease 0s;
+}
+.promo-catalog__closed {
+  height: 0;
 }
 .promo-catalog__text {
   font-size: 10px;
   text-transform: uppercase;
   color: #ffffff;
 }
+.promo-catalog__close {
+  position: absolute;
+  top: 12px;
+  right: 5%;
+  cursor: pointer;
+}
+
 .cover-catalog {
+  margin-top: 40px;
   padding-top: 90px;
+  transition: margin-top 0.3s ease 0s;
 }
 .cover-catalog__slider {
   position: relative;
@@ -1385,11 +1418,7 @@ body._lock .space__cover {
   padding: 19px 0;
   display: flex;
   justify-content: space-between;
-}
-@media (max-width: 992px) {
-  .sort-grid {
-    justify-content: space-evenly;
-  }
+  align-items: center;
 }
 @media (max-width: 768px) {
   .sort-grid__numbers {
@@ -1417,11 +1446,6 @@ body._lock .space__cover {
 .sort-grid__btn--current {
   color: #151515;
 }
-.sort-grid__select {
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
 .sort-grid__button-filter {
   display: none;
   font-size: 10px;
@@ -1431,8 +1455,56 @@ body._lock .space__cover {
 }
 @media (max-width: 992px) {
   .sort-grid__button-filter {
-    display: inline-block;
+    display: block;
+    border-bottom: 1px solid #e5e5e7;
+    min-width: 100px;
+    padding: 14px;
   }
+}
+
+.custom-select {
+  position: relative;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  min-width: 150px;
+}
+.custom-select__top {
+  position: relative;
+  border-bottom: 1px solid #e5e5e7;
+  padding: 14px 5px;
+  cursor: pointer;
+}
+.custom-select__top::before {
+  content: "❯";
+  position: absolute;
+  right: 5px;
+  font-size: 10px;
+  color: #858585;
+  display: block;
+  transform: rotate(90deg);
+  transition: all 0.3s ease 0s;
+}
+.custom-select__dropdown {
+  display: none;
+  padding: 10px 5px 5px 5px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background: #FFF;
+  cursor: pointer;
+}
+.custom-select__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.custom-select--active .custom-select__top::before {
+  transform: rotate(-90deg);
+}
+.custom-select--active .custom-select__dropdown {
+  display: block;
 }
 
 .choice-filter__btn {
@@ -1487,6 +1559,7 @@ body._lock .space__cover {
   border: 2px solid #eeeeee;
   color: #858585;
   text-transform: uppercase;
+  transition: all 0.3s ease 0s;
 }
 .pages-catalog__buttons > *:not(:last-child) {
   margin-right: 6px;

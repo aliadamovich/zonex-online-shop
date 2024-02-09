@@ -177,6 +177,7 @@ body._lock {
 .block-products {
 	
 	&__item {
+		position: relative;
 		display: grid;
 		grid-auto-flow: row;
 		grid-template: auto 1fr / 1fr;
@@ -201,6 +202,22 @@ body._lock {
 	}
 
 	&__content {
+	}
+	&__sale{
+		position: absolute;
+		z-index: 2;
+		top: 5%;
+		left: 5%;
+		height: 24px;
+		border: 2px solid #151515;
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #111111;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 8px;
 	}
 }
 
@@ -232,6 +249,7 @@ body._lock {
 			font-weight: 500;
 			color: #959595;
 			margin-left: 5px;
+			text-decoration: line-through;
 		}
 	}
 

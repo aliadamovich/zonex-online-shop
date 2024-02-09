@@ -18,11 +18,15 @@
 	&__menu {}
 
 	&__logo {
-
+	position: absolute;
+	top: 33px;
+	left: 50%;
+	transform: translateX(-50%);
 		@media (max-width:992px){
-			position: absolute;
+			
 			left: 30px;
 			top: 33px;
+			transform: translateX(0);
 			img{
 				height: 18px;
 			}
@@ -95,6 +99,7 @@
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	cursor: pointer;
 	&__svg {
 		width: 16px;
 		height: 16px;
@@ -114,9 +119,4 @@
 			width: 100px;
 		}
 	}
-}
-
-
-.header__catalog {
-	margin-top: 40px;
 }
