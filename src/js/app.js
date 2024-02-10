@@ -411,80 +411,19 @@ function autoRemoveButton (parent, text) {
 
 
 
-// class CategoryFilter {
-// 	constructor() {
-// 		this.categoryContainer = document.querySelector('.categories-filter');
-// 		this.categoryChosen = document.querySelector('.grid-filter__choice');
+let colorBlock = document.querySelector('.color-info');
 
-// 		this.categoryContainer.addEventListener('change', this.handleCategoryChange.bind(this));
-// 		this.categoryChosen.addEventListener('click', this.removeButton.bind(this));
-// 	}
+if (colorBlock) {
 
-// 	handleCategoryChange(e) {
-// 		let closest = e.target.closest('.content-category__item');
-
-// 		if (closest) {
-// 			let checkedInput = closest.querySelector('input').checked;
-// 			let spanText = closest.querySelector('.content-category__name');
-
-// 			if (checkedInput && spanText) {
-// 				console.log(checkedInput);
-				
-// 				this.addButton(this.categoryChosen, spanText.textContent);
-// 				// closest.querySelector('input').classList.add('active');
-// 			} else {
-// 				console.log(checkedInput);
-				
-// 				// closest.querySelector('input').classList.remove('active');
-// 				this.removeB(this.categoryChosen, spanText.textContent)
-// 			}
-// 		}
-// 	}
-
-// 	addButton(parent, text) {
-// 		parent.style.display = 'flex';
-
-// 		parent.insertAdjacentHTML(
-// 			'afterbegin',
-// 			`<button class="choice-filter__btn">
-//                 ${text}
-//                 <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-//                     <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"/>
-//                 </svg>
-//             </button>`);
-// 	}
-
-// 	removeButton(event) {
-// 		if (event.target.classList.contains('choice-filter__btn')) {
-// 			event.target.remove();
-// 		}
-
-// 		let children = Array.from(event.currentTarget.children);
-
-// 		if (event.target.classList.contains('choice-filter__clear')) {
-// 			children.forEach(child => {
-// 				if (!child.classList.contains('choice-filter__clear'))
-// 					child.remove();
-// 				event.currentTarget.style.display = 'none';
-// 			});
-// 		}
-
-// 		if (event.currentTarget.children.length === 1) {
-// 			event.currentTarget.style.display = 'none';
-// 		}
-// 	}
-
-// 	removeB (parent, text) {
-// 		let catButton = Array.from(parent.querySelectorAll('.choice-filter__btn'));
-// 		if (catButton.length > 0) {
-// 			catButton.forEach(button => {
-// 				if (button.textContent.trim() == text) {
-// 					button.remove()
-// 				}
-// 			})
-// 		}
-// 	}
-// }
-
-// // Использование класса
-// const categoryFilter = new CategoryFilter();
+	colorBlock.addEventListener('click', (e) => {
+		colorBlock.querySelectorAll('.color-info__button');
+		console.log(colorBlock.querySelectorAll('.color-info__button'));
+		
+		// .forEach(item => {
+		// 	item.classList.remove('color-info__button--selected');
+		// })
+		if (e.target.classList.contains('color-info__button')) {
+			e.target.classList.add('color-info__button--selected')
+		}
+	})
+}

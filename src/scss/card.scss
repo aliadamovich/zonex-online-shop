@@ -1,0 +1,182 @@
+//!breadcrumbs=====
+
+.card {
+	&__breadcrumbs {}
+}
+
+.breadcrumbs-card {
+	padding-top: 130px;
+
+	&__cont{
+		display: flex;
+		justify-content: space-between;
+		padding-top: 19px;
+		padding-bottom: 19px;
+	}
+	&__body {
+		
+	}
+
+	&__elem {}
+
+	&__elem--current {}
+
+	&__buttons {
+
+	}
+
+	&__prev,
+	&__next {
+		background: none;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #858585;
+		&--active {
+			color: #151515;
+		}
+	}
+
+
+	&__next {
+		margin-left: 20px;
+	}
+}
+
+//!======card-product============
+
+
+.product-card {
+	padding-top: 28px;
+
+	&__body{
+		display: flex;
+		gap: 143px;
+	}
+	&__gallery {
+		flex: 0 1 55%;
+		display: flex;
+	}
+
+	&__info {
+		flex: 0 1 45%;
+	}
+}
+
+.gallery-card {
+	&__preview {}
+
+	&__main {}
+
+	&__image {}
+}
+
+.preview-card {
+	&__img {}
+}
+
+
+.info-card {
+	&__name {
+		font-size: 24px;
+		color: #151515;
+		margin-bottom: 15px;
+		margin-top: 19px;
+	}
+
+	&__reviews {
+		span{
+			color: #858585;
+			margin-left: 5px;
+		}
+	}
+
+	&__price {
+		margin: 28px 0;
+		font-size: 24px;
+		span{
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+
+	&__descr {
+		color: #454545;
+		line-height: 1.5;
+		margin-bottom: 56px;
+	}
+}
+
+.product-info {
+	&__color {}
+
+	&__size {}
+
+	&__buttons {}
+
+	&__after {}
+}
+
+.color-info {
+	margin-bottom: 29px;
+	&__label {
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #858585;
+		margin-right: 5px;
+		margin-bottom: 14px;
+	}
+
+	&__span {
+		color: #151515;
+	}
+
+	&__buttons {
+		>*:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+
+	&__button {
+		position: relative;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		&::before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 32px;
+			height: 32px;
+			border: 1px solid #ccc;
+			border-radius: 50%;
+			transition: border 0.3s ease 0s;
+		}
+		&:hover{
+			&::before{
+			content: '';
+				border: 1px solid currentColor;
+			}
+		}
+
+		&--selected {
+			&::before {
+				content: '';
+				border: 1px solid currentColor;
+			}
+		}
+	}
+}
+
+.after-info {
+	&__tags {}
+
+	&__social {}
+}
+
+.social-info {
+	&__icons {}
+}
