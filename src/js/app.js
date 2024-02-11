@@ -1,6 +1,12 @@
 import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
+import * as stepper from "./modules/stepper.js";
+stepper.stepperActivation();
+
+import * as gallery from "./modules/card-gallery.js";
+gallery.switchGallery();
+
 //*burger
 const iconMenu = document.querySelector('.menu__icon');
 const spaceCover = document.querySelectorAll('.space__cover');
@@ -460,3 +466,4 @@ if (sizeBlock) {
 		}
 	})
 }
+
