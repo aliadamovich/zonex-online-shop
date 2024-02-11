@@ -7,6 +7,11 @@ stepper.stepperActivation();
 import * as gallery from "./modules/card-gallery.js";
 gallery.switchGallery();
 
+import * as cardTabs from "./modules/card-tabs.js";
+cardTabs.cardTabsSlider();
+
+// new SimpleBar(document.querySelector('.slidebar__left'));
+
 //*burger
 const iconMenu = document.querySelector('.menu__icon');
 const spaceCover = document.querySelectorAll('.space__cover');

@@ -1733,6 +1733,10 @@ body._lock .space__cover {
   width: 100%;
   height: 100%;
 }
+.preview-card__img--chosen {
+  border: 1px solid #858585;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
 .info-card {
   padding: 57px 0 24px 0;
@@ -1949,6 +1953,54 @@ body._lock .space__cover {
   text-transform: uppercase;
   color: #858585;
 }
+.sliderbar {
+  padding-top: 100px;
+}
+.sliderbar__body {
+  display: grid;
+  grid-template-columns: 16% auto;
+  gap: 127px;
+}
+.sliderbar__left {
+  max-height: 204px;
+}
+.left-slidebar > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+.left-slidebar__link {
+  font-size: 15px;
+  font-weight: 700;
+  color: #858585;
+}
+.left-slidebar__link--active {
+  color: #151515;
+}
+.left-slidebar__link:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.right-sliderbar__content {
+  display: none;
+  padding-right: 120px;
+}
+.right-sliderbar__content > *:not(:last-child) {
+  margin-bottom: 18px;
+}
+.right-sliderbar__content p {
+  line-height: 2;
+}
+.right-sliderbar__content--active {
+  display: block;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 3px !important;
+  background-color: #ccc;
+}
+.simplebar-track .simplebar-scrollbar {
+  background-color: #151515;
+}
+
 .footer {
   padding: 100px 249px 0 249px;
 }

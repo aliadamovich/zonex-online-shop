@@ -90,7 +90,10 @@
 		img{
 			width: 100%;
 			height: 100%;
-			
+		}
+		&--chosen{
+			border: 1px solid #858585;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 		}
 	}
 }
@@ -362,4 +365,81 @@
 		color: #858585;
 	}
 	&__icons {}
+}
+
+//!===slidebar===================
+
+// .simplebar-scrollbar::before {
+// 		background-color: #151515!important;
+// 		width: 3px;
+// 		height: 68px;
+// 	}
+
+
+ .card {
+ 	&__sliderbar {}
+ }
+
+ .sliderbar {
+	padding-top: 100px;
+
+ 	&__body {
+		display: grid;
+		grid-template-columns: 16% auto;
+		gap: 127px;
+	}
+	&__left {
+		max-height: 204px;
+	}
+
+	&__right {
+	}
+ }
+
+ .left-slidebar {
+
+	>*:not(:last-child) {
+		margin-bottom: 50px;
+	}
+	&__link {
+		font-size: 15px;
+		font-weight: 700;
+		color: #858585;
+		&--active {
+			color: #151515;
+			// pointer-events: none;
+		}
+		&:not(:last-child){
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.right-sliderbar {
+	&__content {
+		display: none;
+		padding-right: 120px;
+		>*:not(:last-child) {
+				margin-bottom: 18px;
+			}
+
+		p {
+			line-height: 2;
+		}
+
+		&--active {
+			display: block;
+		}
+	}
+}
+
+
+.simplebar-track {
+	&.simplebar-vertical {
+		width: 3px!important;
+		background-color: #ccc;
+	}
+	.simplebar-scrollbar{
+		background-color: #151515;
+	}
 }

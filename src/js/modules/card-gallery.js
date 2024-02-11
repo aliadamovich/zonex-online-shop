@@ -6,10 +6,12 @@ export function switchGallery() {
 	previewCards.addEventListener('click', (e) => {
 		let currentImage = e.target.closest('.preview-card__img img');
 		if (currentImage) {
-			let currentMainSrc = galleryMain.src;
-
+			previewCards.querySelectorAll('.preview-card__img').forEach(item => {
+				item.classList.remove('preview-card__img--chosen');
+				
+			})
+			currentImage.closest('.preview-card__img').classList.add('preview-card__img--chosen');
 			galleryMain.src = currentImage.src;
-			currentImage.src = currentMainSrc;
 		}
 		e.preventDefault();
 	})
