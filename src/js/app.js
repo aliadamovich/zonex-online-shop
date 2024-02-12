@@ -50,7 +50,7 @@ const swiperCard = new Swiper('.related__body', {
 	slidesPerView: 4,
 	spaceBetween: 30,
 	slidesPerGroup: 4,
-	
+
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
@@ -72,3 +72,20 @@ filters.changeFilters();
 import * as cardBlock from "./modules/card-color-size.js";
 cardBlock.chooseColor();
 cardBlock.chooseSize();
+
+const toTop = document.querySelectorAll('.to-top');
+if (toTop.length > 0) {
+	toTop.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			console.log(item);
+			
+			const coverBlock = document.querySelector('.cover-catalog');
+			if (coverBlock) {
+				console.log(coverBlock);
+				
+				coverBlock.scrollIntoView({behavior:'smooth'})
+			}
+		})
+	})
+}

@@ -47,6 +47,7 @@
 
 
 .product-card {
+	position: relative;
 	padding-top: 28px;
 
 	&__body{
@@ -366,7 +367,11 @@
 	}
 	&__icons {}
 }
-
+//!==marketing===========
+.card-marketing{
+	top: 40%;
+	left: 1%;
+}
 //!===slidebar===================
 
 .card {

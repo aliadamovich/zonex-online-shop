@@ -184,8 +184,17 @@ body._lock {
 		grid-auto-flow: row;
 		grid-template: auto 1fr / 1fr;
 		transition: all 0.3s ease 0s;
-		&:hover{
-			box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
+		// &:hover{
+		// 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
+		// }
+		&:hover {
+			.content-block__price {
+				transform: translateY(-100%);
+			}
+
+			.content-block__tocart {
+				transform: translateY(-100%);
+			}
 		}
 	}
 
@@ -226,9 +235,9 @@ body._lock {
 //описание товара
 .content-block {
 	padding: 0 5px;
-	>*:not(:last-child) {
-		margin-bottom: 13px;
-	}
+	// >*:not(:last-child) {
+	// 	margin-bottom: 13px;
+	// }
 	&__label {
 		font-weight: 900;
 		text-transform: uppercase;
@@ -236,24 +245,40 @@ body._lock {
 		font-size: 10px;
 		padding-left: 20px;
 		background-size: 12px;
+		margin-bottom: 13px;
 	}
 
 	&__name {
 		font-size: 13px;
-		color: #454545
+		color: #454545;
+		margin-bottom: 8px;
+	}
+	&__custom {
+		margin-bottom: 18px;
+		height: 25.6px;
+		overflow: hidden;
 	}
 
 	&__price {
 		font-weight: 700;
 		color: #151515;
 		font-size: 13px;
-		margin-bottom: 28px;
+		transition: transform 0.3s ease 0s;
+		padding: 5px 0;
 		span{
 			font-weight: 500;
 			color: #959595;
 			margin-left: 5px;
 			text-decoration: line-through;
 		}
+	}
+	&__tocart {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		background: none;
+		padding: 5px 0;
+		transition: transform 0.3s ease 0s;
 	}
 
 		&__label--new{
@@ -438,6 +463,22 @@ body._lock {
 	}
 }
 
+.to-top{
+	position: fixed;
+	width: 48px;
+	height: 48px;
+	right: 2%;
+	bottom: 5%;
+	box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;align-items: center;
+	background: url("@img/arrow.png") center no-repeat;
+	transition: transform 0.3s ease 0s;
+	&:hover{
+		transform: translateY(7px);
+	}
+}
 //!==HEADER==========================================================================//
 //!============================================================================//
 @import "header";

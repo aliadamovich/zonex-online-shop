@@ -114,12 +114,14 @@
 		}
 	}
 }
+.cover-marketing {
+	bottom: 50px;
+	left: 50px;
+}
 
 .marketing {
 	position: absolute;
 	max-width: 280px;
-	bottom: 50px;
-	left: 50px;
 	z-index: 3;
 	display: flex;
 	gap: 9px;
@@ -167,9 +169,9 @@
 				transform: rotate(-45deg);
 			}
 	}
-		&.__closed {
-			transform: translateX(-150%);
-		}
+	&.__closed {
+		transform: translateX(-150%);
+	}
 }
 
 .info-marketing {
