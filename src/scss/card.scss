@@ -5,7 +5,7 @@
 }
 
 .breadcrumbs-card {
-	padding-top: 130px;
+	padding-top: 90px;
 
 	&__cont{
 		display: flex;
@@ -369,14 +369,7 @@
 
 //!===slidebar===================
 
-// .simplebar-scrollbar::before {
-// 		background-color: #151515!important;
-// 		width: 3px;
-// 		height: 68px;
-// 	}
-
-
- .card {
+.card {
  	&__sliderbar {}
  }
 
@@ -396,7 +389,7 @@
 	}
  }
 
- .left-slidebar {
+.left-slidebar {
 
 	>*:not(:last-child) {
 		margin-bottom: 50px;
@@ -407,7 +400,7 @@
 		color: #858585;
 		&--active {
 			color: #151515;
-			// pointer-events: none;
+			pointer-events: none;
 		}
 		&:not(:last-child){
 			margin-bottom: 20px;
@@ -442,4 +435,53 @@
 	.simplebar-scrollbar{
 		background-color: #151515;
 	}
+}
+
+//!====related====
+.card {
+	&__related {}
+}
+
+.related {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	&__title {
+		font-size: 24px;
+		margin-bottom: 44px;
+	}
+
+	&__body {
+		.swiper-pagination{
+			text-align: left;
+		}
+		.swiper-pagination-bullet{
+			&-active{
+				&::before{
+				background: #eee;
+					
+				}
+			}
+		}
+	}
+
+	&__grid {
+		margin-bottom: 45px;
+	}
+}
+
+
+.grid-related {
+	&__item {}
+
+	&__image {}
+
+	&__content {}
+}
+
+
+
+.swiper-pagination {}
+
+.cover {
+	&__pagination {}
 }

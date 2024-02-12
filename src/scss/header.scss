@@ -1,10 +1,20 @@
 
+.catalog-wrapper{
+	.header {
+			.container--catalog {
+				transition: margin-top 0.3s ease 0s;
+				margin-top: 40px;
+			}
+		}
+}
+
+
 .header {
 	position: absolute;
 	top: 0;
 	width: 100%;
 	z-index: 100;
-	
+
 	&__container{
 		position: relative;
 		height: 90px;

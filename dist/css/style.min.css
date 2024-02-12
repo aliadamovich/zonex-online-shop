@@ -506,6 +506,11 @@ body._lock .space__cover {
   color: #151515;
 }
 
+.catalog-wrapper .header .container--catalog {
+  transition: margin-top 0.3s ease 0s;
+  margin-top: 40px;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -834,7 +839,8 @@ body._lock .space__cover {
 .cover__pagination {
   bottom: 43px !important;
 }
-.cover__pagination .swiper-pagination-bullet {
+
+.swiper-pagination-bullet {
   margin: 0 12px !important;
   width: 6px;
   height: 6px;
@@ -842,12 +848,12 @@ body._lock .space__cover {
   background-color: #ffffff;
   border: none;
 }
-.cover__pagination .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   opacity: 1;
-  background-color: #151515;
+  background-color: #151515 !important;
   position: relative;
 }
-.cover__pagination .swiper-pagination-bullet-active::before {
+.swiper-pagination-bullet-active::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -1137,8 +1143,13 @@ body._lock .space__cover {
   object-fit: cover;
 }
 
-.promo-catalog {
+.catalog__cover {
   position: relative;
+}
+
+.promo-catalog {
+  position: absolute;
+  top: 0;
   width: 100%;
   background: #111;
   height: 40px;
@@ -1146,6 +1157,7 @@ body._lock .space__cover {
   justify-content: center;
   align-items: center;
   transition: height 0.3s ease 0s;
+  z-index: 200;
 }
 .promo-catalog__closed {
   height: 0;
@@ -1163,9 +1175,8 @@ body._lock .space__cover {
 }
 
 .cover-catalog {
-  margin-top: 40px;
-  padding-top: 90px;
-  transition: margin-top 0.3s ease 0s;
+  padding-top: 130px;
+  transition: padding-top 0.3s ease 0s;
 }
 .cover-catalog__slider {
   position: relative;
@@ -1674,7 +1685,7 @@ body._lock .space__cover {
   }
 }
 .breadcrumbs-card {
-  padding-top: 130px;
+  padding-top: 90px;
 }
 .breadcrumbs-card__cont {
   display: flex;
@@ -1974,6 +1985,7 @@ body._lock .space__cover {
 }
 .left-slidebar__link--active {
   color: #151515;
+  pointer-events: none;
 }
 .left-slidebar__link:not(:last-child) {
   margin-bottom: 20px;
@@ -1999,6 +2011,24 @@ body._lock .space__cover {
 }
 .simplebar-track .simplebar-scrollbar {
   background-color: #151515;
+}
+
+.related {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.related__title {
+  font-size: 24px;
+  margin-bottom: 44px;
+}
+.related__body .swiper-pagination {
+  text-align: left;
+}
+.related__body .swiper-pagination-bullet-active::before {
+  background: #eee;
+}
+.related__grid {
+  margin-bottom: 45px;
 }
 
 .footer {

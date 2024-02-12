@@ -4,6 +4,9 @@ export function stepperActivation() {
 	const stepperPlus = document.querySelector('.stepper__plus');
 	const stepperValue = document.querySelector('.stepper__input');
 	
+	if (!stepperMinus || !stepperPlus || !stepperValue) {
+		return;
+	}
 
 	function updateStepper() {
 		if (stepperValue.textContent <= 1) {
