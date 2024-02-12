@@ -184,9 +184,7 @@ body._lock {
 		grid-auto-flow: row;
 		grid-template: auto 1fr / 1fr;
 		transition: all 0.3s ease 0s;
-		// &:hover{
-		// 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
-		// }
+
 		&:hover {
 			.content-block__price {
 				transform: translateY(-100%);
@@ -202,6 +200,7 @@ body._lock {
 		margin-bottom: 25px;
 		position: relative;
 		padding: 0 0 126.3% 0;
+		// transition: opacity 0.3s ease 0s;
 		img{
 			position: absolute;
 			width: 100%;
@@ -209,6 +208,7 @@ body._lock {
 			top: 0;
 			left: 0;
 			object-fit: cover;
+			transition: opacity 0.5s ease 0s;
 		}
 	}
 
@@ -231,13 +231,16 @@ body._lock {
 		padding: 0 8px;
 	}
 }
-
+.fadein{
+	opacity: 1;
+}
+.fadeout{
+	opacity: 0;
+}
 //описание товара
 .content-block {
 	padding: 0 5px;
-	// >*:not(:last-child) {
-	// 	margin-bottom: 13px;
-	// }
+
 	&__label {
 		font-weight: 900;
 		text-transform: uppercase;
@@ -263,7 +266,7 @@ body._lock {
 		font-weight: 700;
 		color: #151515;
 		font-size: 13px;
-		transition: transform 0.3s ease 0s;
+		transition: transform 0.5s ease 0s;
 		padding: 5px 0;
 		span{
 			font-weight: 500;
@@ -278,7 +281,7 @@ body._lock {
 		text-transform: uppercase;
 		background: none;
 		padding: 5px 0;
-		transition: transform 0.3s ease 0s;
+		transition: transform 0.5s ease 0s;
 	}
 
 		&__label--new{
