@@ -1,5 +1,40 @@
 //!breadcrumbs=====
 
+
+
+.copycard{
+	margin-top: 90px;
+}
+.copycard__container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	// height: 865px;
+	height: 100vh;
+}
+
+.copycard__column1{
+	position: relative;
+}
+
+.copycard__image-cont{
+	position: sticky;
+	top: 0;
+	top: calc(100vh - 865px);
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+.copycard__column2{}
+
+
+
+
+
+
+//!====
 .card {
 	&__breadcrumbs {}
 }

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', {
+	"title": "Product card copy"
+	})
+
+<body class="card-page">
+	<div class="wrapper">
+		@@include('html/header--catalog.html', {})
+		<main>
+			<div class="card__sliderbar sliderbar">
+				<div class="container container--catalog">
+					<div class="sliderbar__body">
+						<div class="simplebar sliderbar__left" data-simplebar>
+							<ul class="left-slidebar">
+								<li><a href="#one" class="left-slidebar__link left-slidebar__link--active">Description</a></li>
+								<li><a href="#two" class="left-slidebar__link">Additional information</a></li>
+								<li><a href="#three" class="left-slidebar__link">Reviews (2)</a></li>
+								<li><a href="#four" class="left-slidebar__link">Size charts</a></li>
+								<li><a href="#five" class="left-slidebar__link">Characteristics</a></li>
+							</ul>
+						</div>
+						<div class="sliderbar__right right-sliderbar">
+							<div class="right-sliderbar__content right-sliderbar__content--active" data-target="#one">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+									dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis
+									aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+									sint
+									occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut
+									perspiciatis unde
+									omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+									ab illo
+									inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+								</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+									dolores eos qui
+									ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+									consectetur,
+									adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+									voluptatem.</p>
+							</div>
+							<div class="right-sliderbar__content" data-target="#two">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+									dolore
+									magna
+									aliqua.
+									Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+									ab illo
+									inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+								</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+									dolores eos
+									qui
+									ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+									consectetur,
+									adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+									voluptatem.</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+									dolores eos
+									qui
+									ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+									consectetur,
+									adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+									voluptatem.</p>
+							</div>
+							<div class="right-sliderbar__content" data-target="#three">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+									dolore
+									magna</p>
+							</div>
+							<div class="right-sliderbar__content" data-target="#four">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+									dolore
+									magna</p>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum nulla blanditiis dolores esse
+									deleniti maxime ut placeat numquam, impedit reiciendis, rerum ipsam aspernatur perspiciatis corrupti sit
+									officia, eveniet eum.</p>
+			
+							</div>
+							<div class="right-sliderbar__content" data-target="#five">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+									dolore
+									magna
+									aliqua.
+									Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+									ab illo
+									inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+								</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+									dolores eos
+									qui
+									ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+									consectetur,
+									adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+									voluptatem.</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+									dolores eos
+									qui
+									ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+									consectetur,
+									adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+									voluptatem.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card__related related">
+				<div class="container container--catalog">
+					<h3 class="related__title">Related Products</h3>
+					<div class="related__body swiper">
+						<div class="related__grid grid-related block-products swiper-wrapper">
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/yellow2.jpeg" alt="">
+									<img class="fadeout" src="@img/yellow1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--top">Top rate</div>
+									<h3 class="content-block__name">Triple stone drop earrings</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$49.50</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/earing1.jpeg" alt="">
+									<img class="fadeout" src="@img/earing2.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$158.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/pullover2.jpeg" alt="">
+									<img class="fadeout" src="@img/pullover1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--only">Only a few left</div>
+									<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$220.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/cardigan2.jpeg" alt="">
+									<img class="fadeout" src="@img/cardigan1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<h3 class="content-block__name">Azure Tote</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$290.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/shoes1.jpeg" alt="">
+									<img class="fadeout" src="@img/shoes2.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--new">NEW</div>
+									<h3 class="content-block__name">Eye Mesh Boat Shoes</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$220.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/skirt1.jpeg" alt="">
+									<img class="fadeout" src="@img/skirt2.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<h3 class="content-block__name">Azure Tote</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$290.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/jeans2.jpeg" alt="">
+									<img class="fadeout" src="@img/jeans1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<h3 class="content-block__name">Blue Raincoat</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$250.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/sweater2.jpeg" alt="">
+									<img class="fadeout" src="@img/sweater1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--best">BEST SELLER</div>
+									<h3 class="content-block__name">Backpack with contrasting buckle</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$80.00 - $125.00</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/shirt1.jpeg" alt="">
+									<img class="fadeout" src="@img/shirt2.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--best">BEST SELLER</div>
+									<h3 class="content-block__name">Shirt in organic cotton classic gingham</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$59.50</div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+							<a href="card.html" class="grid-related__item swiper-slide block-products__item">
+								<div class="grid-related__image block-products__img">
+									<img class="fadein" src="@img/jump2.jpeg" alt="">
+									<img class="fadeout" src="@img/jump1.jpeg" alt="">
+								</div>
+								<div class="grid-products__content block-products__content content-block">
+									<div class="content-block__label content-block__label--hot">HOT</div>
+									<h3 class="content-block__name">Tailored indigo jumpsuit</h3>
+									<div class="content-block__custom">
+										<div class="content-block__price">$128.00 <span>165.00</span></div>
+										<button class="content-block__tocart">add to cart</button>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+			<div class="card__product product-card copycard">
+				<div class="container container--catalog">
+					<div class="copycard__container">
+						<div class="copycard__column1">
+							<div class="copycard__image-cont">
+								<img src="@img/dress1.jpg" alt="gold dress">
+							</div>
+						</div>
+						<div class="product-card__info info-card copycard__column2">
+							<div class="content-block__label content-block__label--best">BEST SELLER</div>
+							<h3 class="info-card__name content-block__name">Fringe long sleeve maxi dress in Gold</h3>
+							<div class="info-card__reviews">
+								<?xml version="1.0" encoding="iso-8859-1"?>
+								<svg width="11px" height="11px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+									y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+									<polygon style="fill:#66fa17;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+									81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 " />
+								</svg>
+								<svg width="11px" height="11px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667"
+									style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+									<polygon style="fill:#66fa17;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+																81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 " />
+								</svg>
+								<svg width="11px" height="11px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667"
+									style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+									<polygon style="fill:#66fa17;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+																81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 " />
+								</svg>
+								<svg width="11px" height="11px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667"
+									style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+									<polygon style="fill:#66fa17;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+																81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 " />
+								</svg>
+								<svg width="11px" height="11px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667"
+									style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+									<polygon style="fill:#c0c2c0;" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+																81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 " />
+								</svg>
+								<span>2 Reviews</span>
+							</div>
+							<div class="info-card__price content-block__price">$128.00 <span>165.00</span></div>
+							<p class="info-card__descr">We love the dramatic ruffle details down the sleeve, delicate fabric buttons and polished cuffs.</p>
+							<div class="product-info__color color-info">
+								<div class="color-info__label">color: <span class="color-info__span">green</span></div>
+								<div class="color-info__buttons">
+									<button data-color="red" class="color-info__button" style="background-color: red"></button>
+									<button data-color="orange" class="color-info__button" style="background-color: orange"></button>
+									<button data-color="green" class="color-info__button color-info__button--selected" style="background-color: green"></button>
+									<button data-color="white" class="color-info__button" style="background-color: white"></button>
+									<button data-color="black" class="color-info__button" style="background-color: black"></button>
+									<button data-color="brown" class="color-info__button" style="background-color: #7f4f2d"></button>
+									<button data-color="purple" class="color-info__button" style="background-color: purple"></button>
+									<button data-color="gray" class="color-info__button" style="background-color: gray"></button>
+								</div>
+							</div>
+							<div class="product-info__size size-info">
+								<div class="size-info__top">
+									<div class="size-info__label">size: <span class="size-info__span">select a size</span></div>
+									<a href="#" class="size-info__charts">size charts</a>
+								</div>
+								<div class="size-info__buttons">
+									<button data-color="red" class="size-info__button">23</button>
+									<button data-color="orange" class="size-info__button">24</button>
+									<button data-color="green" class="size-info__button">25</button>
+									<button data-color="white" class="size-info__button">26</button>
+									<button data-color="black" class="size-info__button">27</button>
+									<button data-color="brown" class="size-info__button">28</button>
+									<button data-color="purple" class="size-info__button">29</button>
+									<button data-color="gray" class="size-info__button">30</button>
+									<button data-color="gray" class="size-info__button">31</button>
+								</div>
+								<button class="size-info__clear">
+									<?xml version="1.0" encoding="utf-8"?>
+									<svg width="10px" height="10px" viewBox="0 0 24 24" fill="#d24242" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"  stroke="#d24242"
+											stroke-width="2"/>
+									</svg>clear</button>
+							</div>
+							<div class="product-info__buttons info-buttons">
+									<div class="info-buttons__stepper stepper">
+										<button class="stepper__minus stepper__minus--disabled">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round">
+												<line x1="5" y1="12" x2="19" y2="12"></line>
+											</svg>
+										</button>
+										<div class="stepper__input">1</div>
+										<button class="stepper__plus">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round">
+												<line x1="12" y1="5" x2="12" y2="19"></line>
+												<line x1="5" y1="12" x2="19" y2="12"></line>
+											</svg>
+										</button>
+									</div>
+									<button class="info-button__btn block__button block__button--black">add to cart</button>
+									<button class="info-button__btn block__button block__button--gray">add to wichlist</button>
+							</div>
+							<div class="product-info__after after-info">
+								<div class="after-info__tags">
+									<p>SKU: <span>FW511</span> </p>
+									<p>Category: <span>Trousers, Life style</span> </p>
+									<p>Tags: <span>Designer, Women</span></p>
+								</div>
+								<div class="after-info__social social-info">
+									<span>share:</span>
+									<div class="bottom-footer__social social-info__icons">
+										<a href=""><img src="@img/twitter.png" alt=""></a>
+										<a href=""><img src="@img/facebook.png" alt=""></a>
+										<a href=""><img src="@img/instagram.png" alt=""></a>
+										<a href=""><img src="@img/pinterest.png" alt=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</main>
+	
+		@@include('html/catalog--footer.html', {})
+	</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+		<script src="js/app.min.js"></script>
+</body>
+</html>
