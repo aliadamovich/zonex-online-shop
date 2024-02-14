@@ -30,7 +30,8 @@ export function marketingAd() {
 
 		marketing.addEventListener('click', (e) => {
 			if (e.target.classList.contains('marketing__close')) {
-				removeMarketing()
+				removeMarketing();
+				e.preventDefault();
 			}
 		})
 

@@ -57,7 +57,14 @@ const swiperCard = new Swiper('.related__body', {
 	},
 });
 
+// const swiperPreview = new Swiper('.gallery-card', {
+// 	loop: true,
+// });
 
+import Slider from "./modules/slider.js";
+const sliderContainer = document.querySelector('.gallery-card');
+
+new Slider(sliderContainer);
 
 //*Promo closing
 import * as promo from "./modules/promo.js";
@@ -67,6 +74,9 @@ promo.promoAppear();
 import * as filters from "./modules/filters.js";
 filters.changeFilters();
 
+
+// import * as adaptiveCard from "./modules/card-adaptive.js";
+// adaptiveCard.cardAdaptive();
 
 //*Картчока товара
 import * as cardBlock from "./modules/card-color-size.js";
@@ -115,37 +125,3 @@ function imageFade (block) {
 		el.classList.toggle('fadeout');
 	})
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-// 	const imageContainer = document.querySelector('.copycard__image-cont');
-
-// 	window.addEventListener('scroll', function () {
-// 		const scrollPosition = window.scrollY;
-// 		imageContainer.style.transform = 'translateY(' + scrollPosition + 'px)';
-// 	});
-// });
-
-document.addEventListener('DOMContentLoaded', function () {
-	var imageContainer = document.querySelector('.copycard__image-cont');
-	var gridContainer = document.querySelector('.copycard__container');
-
-	window.addEventListener('scroll', function () {
-		const containerTop = gridContainer.getBoundingClientRect().top;
-		console.log(containerTop);
-		// console.log(window.scrollY);
-		
-		var scrollPosition = window.scrollY - containerTop;
-		// console.log(scrollPosition);
-		
-		var containerHeight = document.querySelector('.copycard__container').offsetHeight;
-		var imageHeight = document.querySelector('.copycard__image-cont img').offsetHeight;
-		var maxTop = containerHeight - imageHeight;
-		// console.log(maxTop);
-
-		if (scrollPosition > maxTop) {
-			scrollPosition = maxTop;
-		}
-
-		imageContainer.style.transform = 'translateY(' + scrollPosition + 'px)';
-	});
-});
