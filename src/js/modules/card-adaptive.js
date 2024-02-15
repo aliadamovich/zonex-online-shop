@@ -5,13 +5,13 @@ export function cardAdaptive() {
 	const mainImage = document.querySelector('.gallery-card__main img');
 
 	document.addEventListener('DOMContentLoaded', function() {
-
-		if (window.innerWidth > 768) {
-			window.addEventListener('scroll', scrollImage);
-			window.addEventListener('resize', scrollImage);
-			scrollImage()
+		if (imageContainer || previewImages || mainImage) {
+			if (window.innerWidth > 768) {
+				window.addEventListener('scroll', scrollImage);
+				window.addEventListener('resize', scrollImage);
+				scrollImage()
+			}
 		}
-		
 		function scrollImage() {
 			let containerHeight = imageContainer.clientHeight;
 			let imageHeight = mainImage.clientHeight;

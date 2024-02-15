@@ -10,40 +10,10 @@ gallery.switchGallery();
 import * as cardTabs from "./modules/card-tabs.js";
 cardTabs.cardTabsSlider();
 
-
-new SimpleBar(document.querySelector('.sliderbar__left'), { autoHide: false });
-// let simpleBarInstance = null;
-
-// function initSimpleBar() {
-// 	simpleBarInstance = new SimpleBar(document.querySelector('.sliderbar__left'));
-// }
-
-// function destroySimpleBar() {
-// 	if (simpleBarInstance) {
-// 		simpleBarInstance.destroy();
-// 		simpleBarInstance = null;
-// 	}
-// }
-
-// window.addEventListener('resize', function () {
-// 	if (window.innerWidth > 768) {
-// 		// Инициализировать SimpleBar, если ширина больше 768px
-// 		initSimpleBar();
-// 	} else {
-// 		// Уничтожить SimpleBar, если ширина меньше или равна 768px
-// 		destroySimpleBar();
-// 	}
-// });
-
-// window.addEventListener('DOMContentLoaded', () => {
-// 	if (window.innerWidth > 768) {
-// 		initSimpleBar();
-// 	} else {
-// 		destroySimpleBar();
-// 	}
-// })
-
-
+const scrollBar = document.querySelector('.sliderbar__left');
+if (scrollBar) {
+	new SimpleBar((scrollBar), { autoHide: false });
+}
 
 
 //*burger
