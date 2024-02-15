@@ -18,4 +18,10 @@ export function cardTabsSlider() {
 			e.preventDefault();
 		})
 	}
+
+	// window.addEventListener('resize', function () {
+	// 	if (window.innerWidth > 768) {
+	// 		new SimpleBar(document.querySelector('.sliderbar__left'));
+	// 	}
+	// })
 }

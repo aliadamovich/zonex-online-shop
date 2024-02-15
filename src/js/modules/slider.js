@@ -1,26 +1,22 @@
 class Slider {
 	constructor(element) {
+		if (!element) {
+			return;
+		}
 		this.sliderSpace = element;
-		this.sliderLine = element.querySelector('.slider__line');
-		this.sliderImages = element.querySelectorAll('.slide');
-		this.buttonNext = element.querySelector('.next');
-		this.buttonPrev = element.querySelector('.prev');
-		this.dotContainer = element.querySelector('.dots');
-		this.dot = element.querySelectorAll('.dot');
-		this.countSlide = 0;
 		this.slideWidth = null;
 
-		// if (!this.sliderSpace || !this.sliderLine || !this.buttonNext || !this.buttonPrev || !this.sliderImages) {
-		// 	console.error('Не удалось найти все необходимые элементы слайдера');
-		// 	return;
-		// }
 		if (window.innerWidth <= 768) {
-			console.log(window.innerWidth);
-			
+			this.sliderLine = element.querySelector('.slider__line');
+			this.sliderImages = element.querySelectorAll('.slide');
+			this.buttonNext = element.querySelector('.next');
+			this.buttonPrev = element.querySelector('.prev');
+			this.dotContainer = element.querySelector('.dots');
+			this.dot = element.querySelectorAll('.dot');
+			this.countSlide = 0;
+
 			this.setParameters();
 			this.setEvents();
-		} else {
-			return
 		}
 		
 	}
@@ -40,22 +36,30 @@ class Slider {
 	setEvents() {
 		window.addEventListener('resize', debounce(this.resizeGalery));
 
-		this.buttonNext.addEventListener('click', (e) => {
-			this.moveNextSlide(e);
-		});
-
-		this.buttonPrev.addEventListener('click', (e) => {
-			this.movePrevSlide(e);
-		});
+		if (this.buttonNext) {
+			this.buttonNext.addEventListener('click', (e) => {
+				this.moveNextSlide(e);
+			});
+		}
 		
-		this.dotContainer.addEventListener('click', (e) => {
-			this.clickDots(e);
-		});
+		if (this.buttonPrev) {
+			this.buttonPrev.addEventListener('click', (e) => {
+				this.movePrevSlide(e);
+			});
+		}
+		
+		if (this.dotContainer) {
+			this.dotContainer.addEventListener('click', (e) => {
+				this.clickDots(e);
+			});
+		}
 	}
 	
 	resizeGalery = () => {
 		this.setParameters();
+		
 	};
+	
 
 	moveNextSlide(e) {
 		if (this.countSlide >= this.sliderImages.length - 1) {
@@ -96,16 +100,19 @@ class Slider {
 	}
 
 	disableButtons() {
-		if (this.countSlide <= 0) {
-			this.buttonPrev.classList.add('disable');
-		} else {
-			this.buttonPrev.classList.remove('disable');
+		if (this.buttonPrev && this.buttonNext) {
+			if (this.countSlide <= 0) {
+				this.buttonPrev.classList.add('disable');
+			} else {
+				this.buttonPrev.classList.remove('disable');
+			}
+			if (this.countSlide >= this.sliderImages.length - 1) {
+				this.buttonNext.classList.add('disable');
+			} else {
+				this.buttonNext.classList.remove('disable');
+			}
 		}
-		if (this.countSlide >= this.sliderImages.length - 1) {
-			this.buttonNext.classList.add('disable');
-		} else {
-			this.buttonNext.classList.remove('disable');
-		}
+
 	}
 
 	changeActiveDoteClass() {
@@ -134,4 +141,4 @@ function debounce(func, time = 100) {
 	}
 }
 
-export default Slider;
+export { Slider, debounce };

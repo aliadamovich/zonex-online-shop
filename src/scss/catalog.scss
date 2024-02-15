@@ -13,11 +13,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: height 0.3s ease 0s;
+	transition: top 0.3s ease 0s;
 	z-index: 200;
 
 	&__closed{
-		height: 0;
+		top: -100%;
 	}
 
 	&__text {
@@ -38,6 +38,7 @@
 .cover-catalog {
 	padding-top: 130px;
 	transition: padding-top 0.3s ease 0s;
+	
 	&__slider{
 		position: relative;
 		overflow: hidden;

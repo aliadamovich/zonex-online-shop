@@ -10,7 +10,41 @@ gallery.switchGallery();
 import * as cardTabs from "./modules/card-tabs.js";
 cardTabs.cardTabsSlider();
 
-// new SimpleBar(document.querySelector('.slidebar__left'));
+
+new SimpleBar(document.querySelector('.sliderbar__left'), { autoHide: false });
+// let simpleBarInstance = null;
+
+// function initSimpleBar() {
+// 	simpleBarInstance = new SimpleBar(document.querySelector('.sliderbar__left'));
+// }
+
+// function destroySimpleBar() {
+// 	if (simpleBarInstance) {
+// 		simpleBarInstance.destroy();
+// 		simpleBarInstance = null;
+// 	}
+// }
+
+// window.addEventListener('resize', function () {
+// 	if (window.innerWidth > 768) {
+// 		// Инициализировать SimpleBar, если ширина больше 768px
+// 		initSimpleBar();
+// 	} else {
+// 		// Уничтожить SimpleBar, если ширина меньше или равна 768px
+// 		destroySimpleBar();
+// 	}
+// });
+
+// window.addEventListener('DOMContentLoaded', () => {
+// 	if (window.innerWidth > 768) {
+// 		initSimpleBar();
+// 	} else {
+// 		destroySimpleBar();
+// 	}
+// })
+
+
+
 
 //*burger
 import * as burger from "./modules/burger.js";
@@ -55,14 +89,28 @@ const swiperCard = new Swiper('.related__body', {
 		el: '.swiper-pagination',
 		clickable: true,
 	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+		},
+		600: {
+			slidesPerView: 3,
+			slidesPerGroup: 3,
+		},
+		768: {
+			slidesPerView: 4,
+			slidesPerView: 4,
+		},
+	}
 });
 
-// const swiperPreview = new Swiper('.gallery-card', {
-// 	loop: true,
-// });
-
-import Slider from "./modules/slider.js";
 const sliderContainer = document.querySelector('.gallery-card');
+import { Slider, debounce } from "./modules/slider.js";
+const uprF = () => {
+	debounce(func, time = 100)
+}
+const debouncedFunc = debounce(uprF, 100);
 
 new Slider(sliderContainer);
 
@@ -74,9 +122,9 @@ promo.promoAppear();
 import * as filters from "./modules/filters.js";
 filters.changeFilters();
 
-
-// import * as adaptiveCard from "./modules/card-adaptive.js";
-// adaptiveCard.cardAdaptive();
+//*скролл фото карточки товара
+import * as adaptiveCard from "./modules/card-adaptive.js";
+adaptiveCard.cardAdaptive();
 
 //*Картчока товара
 import * as cardBlock from "./modules/card-color-size.js";
