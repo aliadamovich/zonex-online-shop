@@ -598,7 +598,7 @@ body._lock .space__cover {
     max-width: 80px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 520px) {
   .header__logo {
     top: 18px;
   }
@@ -1952,6 +1952,7 @@ body._lock .space__cover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #151515;
   }
   .prev.disable,
   .next.disable {

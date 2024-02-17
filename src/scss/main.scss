@@ -71,15 +71,12 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		@media (max-width:900px){
 
-		};
 		img{
 			@media (max-width:800px) {
 				object-position: 70% 0;
 			}
 		}
-	
 	}
 
 	&__pagination {
