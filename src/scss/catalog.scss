@@ -328,6 +328,11 @@
 	}
 
 	&__link{
+		color: #858585;
+		transition: all 0.3s ease 0s;
+		&:hover {
+				color: #151515;
+			}
 	}
 
 	&__item {
@@ -352,7 +357,7 @@
 	}
 
 	&__name {
-		color: #858585;
+		// color: #858585;
 		position: relative;
 		padding-left: 20px;
 		&::before{

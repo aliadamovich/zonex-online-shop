@@ -85,6 +85,7 @@
 	display: flex;
 	align-items: start;
 	gap: 25px;
+
 	svg{
 		stroke: #151515;
 		width: 16px;
@@ -105,6 +106,23 @@
 	&__cart {
 		display: inline-flex;
 		align-items: center;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			svg {
+
+					opacity: 0.7;
+				}
+		}
+	}
+
+	&__login{
+		transition: all 0.3s ease 0s;
+		&:hover{
+			svg {
+					opacity: 0.7;
+				}
+		}
+
 	}
 }
 
@@ -114,6 +132,11 @@
 	align-items: center;
 	gap: 5px;
 	cursor: pointer;
+	&:hover{
+		svg {
+				opacity: 0.7;
+			}
+	}
 	&__svg {
 		width: 16px;
 		height: 16px;
@@ -132,5 +155,6 @@
 		&:focus{
 			width: 100px;
 		}
+
 	}
 }

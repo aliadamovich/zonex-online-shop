@@ -282,6 +282,9 @@ body._lock {
 		background: none;
 		padding: 5px 0;
 		transition: transform 0.5s ease 0s;
+		&:hover{
+			text-decoration: underline;
+		}
 	}
 
 		&__label--new{
@@ -409,11 +412,11 @@ body._lock {
 		left: 0;
 		z-index: 10;
 		background: #FFF;
-		cursor: pointer;
 		overflow: auto;
 	}
 
 	&__item {
+		cursor: pointer;
 		&:not(:last-child) {
 			margin-bottom: 10px;
 		}
