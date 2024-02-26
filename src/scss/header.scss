@@ -74,7 +74,13 @@
 	}
 
 	&__item {
+		padding: 18px 0;
 		// position: relative;
+		&:hover{
+			.sublist{
+				display: flex;
+			}
+		}
 	}
 
 	&__link {
@@ -162,15 +168,20 @@
 }
 
 .sublist {
+	display: none;
 	position: absolute;
-	top: 100%;
+	top: 80%;
 	left: 0px;
-	width: 80%;
-	display: flex;
+	// width: 80%;
+	// display: flex;
 	justify-content: space-evenly;
-	gap: 60px;
+	gap: 120px;
 	background: #FFF;
 	padding: 50px;
+
+	&__active{
+		display: flex;
+	}
 }
 
 .menu-sublist {
@@ -187,13 +198,9 @@
 	}
 
 	&__item {
-		display: block;
 		font-size: 18px;
 		color: #151515;
 		transition: all 0.3s ease 0s;
-		&:hover{
-			text-decoration: underline;
-		}
 
 	&--pic{
 		position: relative;

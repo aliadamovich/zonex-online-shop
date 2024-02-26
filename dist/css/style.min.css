@@ -622,6 +622,12 @@ body._lock .space__cover {
 .menu__list {
   gap: 25px;
 }
+.menu__item {
+  padding: 18px 0;
+}
+.menu__item:hover .sublist {
+  display: flex;
+}
 .icons-header {
   display: flex;
   align-items: start;
@@ -691,15 +697,17 @@ body._lock .space__cover {
 }
 
 .sublist {
+  display: none;
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 0px;
-  width: 80%;
-  display: flex;
   justify-content: space-evenly;
-  gap: 60px;
+  gap: 120px;
   background: #FFF;
   padding: 50px;
+}
+.sublist__active {
+  display: flex;
 }
 
 .menu-sublist li:not(:last-child) {
@@ -712,13 +720,9 @@ body._lock .space__cover {
   margin-bottom: 15px;
 }
 .menu-sublist__item {
-  display: block;
   font-size: 18px;
   color: #151515;
   transition: all 0.3s ease 0s;
-}
-.menu-sublist__item:hover {
-  text-decoration: underline;
 }
 .menu-sublist__item--pic {
   position: relative;
