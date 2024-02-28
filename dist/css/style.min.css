@@ -142,7 +142,7 @@ h6 {
     max-width: 1250px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1260px) {
   .container--general {
     max-width: none;
     padding: 0 20px;
@@ -262,7 +262,7 @@ body._lock .space__cover {
   position: absolute;
   width: 0%;
   height: 2px;
-  bottom: -5px;
+  bottom: -3px;
   left: 50%;
   background-color: #151515;
   transition: all 0.3s ease 0s;
@@ -623,10 +623,8 @@ body._lock .space__cover {
   gap: 25px;
 }
 .menu__item {
-  padding: 18px 0;
-}
-.menu__item:hover .sublist {
-  display: flex;
+  padding: 8px 0;
+  cursor: pointer;
 }
 .icons-header {
   display: flex;
@@ -699,25 +697,61 @@ body._lock .space__cover {
 .sublist {
   display: none;
   position: absolute;
-  top: 80%;
+  z-index: 100;
+  top: 70%;
   left: 0px;
   justify-content: space-evenly;
   gap: 120px;
   background: #FFF;
   padding: 50px;
+  cursor: pointer;
+  pointer-events: none;
 }
-.sublist__active {
+.sublist__spacecover {
+  pointer-events: none;
+  opacity: 0;
+}
+.sublist.__active .sublist__spacecover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  background: rgba(21, 21, 21, 0.2392156863);
+  z-index: -99;
+}
+@media (max-width: 1260px) {
+  .sublist {
+    margin: 0 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .sublist {
+    padding: 30px;
+    gap: 100px;
+  }
+}
+
+body._pc .menu__item:hover .sublist {
+  display: flex;
+  pointer-events: all;
+}
+
+body._touch .sublist.__active {
   display: flex;
 }
 
 .menu-sublist li:not(:last-child) {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 .menu-sublist__header {
   font-size: 20px;
   color: #858585;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .menu-sublist__item {
   font-size: 18px;
@@ -727,13 +761,14 @@ body._lock .space__cover {
 .menu-sublist__item--pic {
   position: relative;
   overflow: hidden;
+  display: block;
 }
 .menu-sublist__item--pic img {
   transition: transform 0.3s ease 0s;
 }
 .menu-sublist__item--pic span {
   position: absolute;
-  bottom: 15px;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   color: #FFF;

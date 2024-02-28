@@ -74,17 +74,11 @@
 	}
 
 	&__item {
-		padding: 18px 0;
-		// position: relative;
-		&:hover{
-			.sublist{
-				display: flex;
-			}
-		}
+		padding: 8px 0;
+		cursor: pointer;
 	}
 
 	&__link {
-
 	}
 
 }
@@ -170,7 +164,8 @@
 .sublist {
 	display: none;
 	position: absolute;
-	top: 80%;
+	z-index: 100;
+	top: 70%;
 	left: 0px;
 	// width: 80%;
 	// display: flex;
@@ -178,23 +173,74 @@
 	gap: 120px;
 	background: #FFF;
 	padding: 50px;
+	cursor: pointer;
+	pointer-events: none;
 
-	&__active{
-		display: flex;
+	&__spacecover {
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	&.__active{
+		// display: flex;
+		// pointer-events: all;
+
+		.sublist__spacecover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 1;
+				pointer-events: auto;
+				cursor: pointer;
+				background: #1515153d;
+				z-index: -99;
+			}
+	}
+	@media (max-width:1260px){
+		margin: 0 20px;
+	};
+	@media (max-width:1100px){
+		padding: 30px;
+		gap: 100px;
+	};
+}
+
+body{
+	&._pc {
+		.menu__item {
+			&:hover{
+				.sublist {
+					display: flex;
+					pointer-events: all;
+				}
+			}
+		}
+	}
+}
+
+body {
+	&._touch {
+		.sublist {
+			&.__active {
+				display: flex;
+			}
+		}
 	}
 }
 
 .menu-sublist {
 	li{
 		&:not(:last-child){
-			margin-bottom: 12px;
+			margin-bottom: 15px;
 		}
 	}
 	&__header {
 		font-size: 20px;
 		color: #858585;
 		text-transform: uppercase;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 
 	&__item {
@@ -205,22 +251,22 @@
 	&--pic{
 		position: relative;
 		overflow: hidden;
+		display: block;
 		img{
 			transition: transform 0.3s ease 0s;
 		}
 		span{
 			position: absolute;
-			bottom: 15px;
+			bottom: 10%;
 			left: 50%;
 			transform: translateX(-50%);
 			color: #FFF;
 			text-transform: uppercase;
 			font-weight: 700;
 			font-size: 22px;
-			}
+		}
 			&:hover {
 				img {
-
 					transform: scale(1.05);
 				}
 			}

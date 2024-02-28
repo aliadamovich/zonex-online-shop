@@ -143,3 +143,60 @@ function imageFade (block) {
 		el.classList.toggle('fadeout');
 	})
 }
+
+//submenu
+
+const isMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i);
+	},
+	BlackBerry: function () {
+		return navigator.userAgent.match(/BlackBerry/i);
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	},
+	Opera: function () {
+		return navigator.userAgent.match(/Opera Mini/i);
+	},
+	Windows: function () {
+		return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+	},
+	any: function () {
+		return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+	}
+};
+
+const menuItem = document.querySelectorAll('.menu__item');
+const space = document.querySelectorAll('.sublist__spacecover');
+
+if (isMobile.any()) {
+	document.body.classList.add('_touch');
+if (menuItem.length > 0) {
+	menuItem.forEach(item => {
+		item.addEventListener('click', (e) => {
+			const sublist = item.querySelector('.sublist');
+			if (e.target.classList.contains('menu__link') && sublist) {
+				sublist.classList.toggle('__active');
+				e.preventDefault();
+			}
+		})
+	})
+} else {
+	document.body.classList.add('_pc');
+}
+}
+	
+if (space.length > 0) {
+	space.forEach(elem => {
+		elem.addEventListener('click', (e) => {
+			// const sibling = e.target.previousElementSibling;
+			// console.log(sibling);
+			
+			if (e.target.closest('.sublist').classList.contains('__active')){
+				e.target.closest('.sublist').classList.remove('__active')
+			}
+		})
+	})
+}
+
