@@ -167,8 +167,6 @@
 	z-index: 100;
 	top: 70%;
 	left: 0px;
-	// width: 80%;
-	// display: flex;
 	justify-content: space-evenly;
 	gap: 120px;
 	background: #FFF;
@@ -176,28 +174,28 @@
 	cursor: pointer;
 	pointer-events: none;
 
-	&__spacecover {
-		pointer-events: none;
-		opacity: 0;
-	}
+	// &__spacecover {
+	// 	pointer-events: none;
+	// 	opacity: 0;
+	// }
 
 	&.__active{
-		// display: flex;
-		// pointer-events: all;
-
-		.sublist__spacecover {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				opacity: 1;
-				pointer-events: auto;
-				cursor: pointer;
-				background: #1515153d;
-				z-index: -99;
-			}
+		display: flex;
+		pointer-events: all;
 	}
+	// 	.sublist__spacecover {
+	// 			position: fixed;
+	// 			top: 0;
+	// 			left: 0;
+	// 			right: 0;
+	// 			bottom: 0;
+	// 			opacity: 1;
+	// 			pointer-events: auto;
+	// 			cursor: pointer;
+	// 			background: #1515153d;
+	// 			z-index: -99;
+	// 		}
+	// }
 	@media (max-width:1260px){
 		margin: 0 20px;
 	};
@@ -222,15 +220,29 @@ body{
 
 body {
 	&._touch {
-		.sublist {
-			&.__active {
-				display: flex;
-			}
+		.sublist__active {
+			display: flex;
+			pointer-events: auto;
 		}
+	.menu__body:has(.sublist__active) {
+		~.space__cover{
+			position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 1;
+				z-index: 99;
+				pointer-events: auto;
+				cursor: pointer;
+				background: #1515153d;
+		}
+	}
 	}
 }
 
 .menu-sublist {
+	pointer-events: all;
 	li{
 		&:not(:last-child){
 			margin-bottom: 15px;

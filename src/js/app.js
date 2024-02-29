@@ -101,6 +101,14 @@ import * as cardBlock from "./modules/card-color-size.js";
 cardBlock.chooseColor();
 cardBlock.chooseSize();
 
+//*submenu
+import * as submenu from "./modules/submenu.js";
+submenu.submenuStart();
+
+//*product fade
+import * as fade from "./modules/fadeproduct.js";
+fade.fadeProduct();
+
 //*to-top
 const toTop = document.querySelectorAll('.to-top');
 if (toTop.length > 0) {
@@ -119,84 +127,8 @@ if (toTop.length > 0) {
 	})
 }
 
-//*product fade
-const blockProducts = document.querySelectorAll('.block-products__img');
 
-blockProducts.forEach(item => {
-	item.addEventListener('mouseenter', function () {
-		imageFade(item)
-	})
-	
-})
-blockProducts.forEach(item => {
-	item.addEventListener('mouseleave', function() {
-	 imageFade(item)
-	})
-})
 
-function imageFade (block) {
 
-	let innerImages = block.querySelectorAll('img');
-	
-	innerImages.forEach(el => {
-		el.classList.toggle('fadein');
-		el.classList.toggle('fadeout');
-	})
-}
 
-//submenu
-
-const isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i);
-	},
-	BlackBerry: function () {
-		return navigator.userAgent.match(/BlackBerry/i);
-	},
-	iOS: function () {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-	},
-	Opera: function () {
-		return navigator.userAgent.match(/Opera Mini/i);
-	},
-	Windows: function () {
-		return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-	},
-	any: function () {
-		return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-	}
-};
-
-const menuItem = document.querySelectorAll('.menu__item');
-const space = document.querySelectorAll('.sublist__spacecover');
-
-if (isMobile.any()) {
-	document.body.classList.add('_touch');
-if (menuItem.length > 0) {
-	menuItem.forEach(item => {
-		item.addEventListener('click', (e) => {
-			const sublist = item.querySelector('.sublist');
-			if (e.target.classList.contains('menu__link') && sublist) {
-				sublist.classList.toggle('__active');
-				e.preventDefault();
-			}
-		})
-	})
-} else {
-	document.body.classList.add('_pc');
-}
-}
-	
-if (space.length > 0) {
-	space.forEach(elem => {
-		elem.addEventListener('click', (e) => {
-			// const sibling = e.target.previousElementSibling;
-			// console.log(sibling);
-			
-			if (e.target.closest('.sublist').classList.contains('__active')){
-				e.target.closest('.sublist').classList.remove('__active')
-			}
-		})
-	})
-}
 

@@ -707,21 +707,9 @@ body._lock .space__cover {
   cursor: pointer;
   pointer-events: none;
 }
-.sublist__spacecover {
-  pointer-events: none;
-  opacity: 0;
-}
-.sublist.__active .sublist__spacecover {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-  pointer-events: auto;
-  cursor: pointer;
-  background: rgba(21, 21, 21, 0.2392156863);
-  z-index: -99;
+.sublist.__active {
+  display: flex;
+  pointer-events: all;
 }
 @media (max-width: 1260px) {
   .sublist {
@@ -740,10 +728,26 @@ body._pc .menu__item:hover .sublist {
   pointer-events: all;
 }
 
-body._touch .sublist.__active {
+body._touch .sublist__active {
   display: flex;
+  pointer-events: auto;
+}
+body._touch .menu__body:has(.sublist__active) ~ .space__cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: 99;
+  pointer-events: auto;
+  cursor: pointer;
+  background: rgba(21, 21, 21, 0.2392156863);
 }
 
+.menu-sublist {
+  pointer-events: all;
+}
 .menu-sublist li:not(:last-child) {
   margin-bottom: 15px;
 }

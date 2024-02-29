@@ -26,10 +26,10 @@ export function burgerStart() {
 				menuBody.classList.remove('_active');
 			}
 
-			if (asideFilter.classList.contains('_active')) {
-				asideFilter.classList.remove('_active');
-				document.body.classList.remove('_lock');
-			}
+			// if (asideFilter.classList.contains('_active')) {
+			// 	asideFilter.classList.remove('_active');
+			// 	document.body.classList.remove('_lock');
+			// }
 		})
 	})
 }
