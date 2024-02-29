@@ -97,6 +97,8 @@ body._lock {
 		z-index: 99;
 		pointer-events: auto;
 		cursor: pointer;
+		background: #15151555;
+		transition: background 0.5s ease 0s;
 	}
 }
 .space__cover {

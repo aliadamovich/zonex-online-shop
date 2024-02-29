@@ -101,9 +101,9 @@ import * as cardBlock from "./modules/card-color-size.js";
 cardBlock.chooseColor();
 cardBlock.chooseSize();
 
-//*submenu
-import * as submenu from "./modules/submenu.js";
-submenu.submenuStart();
+// //*submenu
+// import * as submenu from "./modules/submenu.js";
+// submenu.submenuStart();
 
 //*product fade
 import * as fade from "./modules/fadeproduct.js";

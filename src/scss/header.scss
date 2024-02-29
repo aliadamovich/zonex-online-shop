@@ -162,40 +162,27 @@
 }
 
 .sublist {
-	display: none;
+	display: flex;
 	position: absolute;
 	z-index: 100;
 	top: 70%;
-	left: 0px;
+	// left: 0;
 	justify-content: space-evenly;
 	gap: 120px;
 	background: #FFF;
 	padding: 50px;
 	cursor: pointer;
 	pointer-events: none;
-
-	// &__spacecover {
-	// 	pointer-events: none;
-	// 	opacity: 0;
-	// }
+	transition: all 0.5s ease 0s;
+	opacity: 0;
+	visibility: hidden;
 
 	&.__active{
-		display: flex;
 		pointer-events: all;
+		opacity: 1;
+		visibility: visible;
 	}
-	// 	.sublist__spacecover {
-	// 			position: fixed;
-	// 			top: 0;
-	// 			left: 0;
-	// 			right: 0;
-	// 			bottom: 0;
-	// 			opacity: 1;
-	// 			pointer-events: auto;
-	// 			cursor: pointer;
-	// 			background: #1515153d;
-	// 			z-index: -99;
-	// 		}
-	// }
+
 	@media (max-width:1260px){
 		margin: 0 20px;
 	};
@@ -210,8 +197,10 @@ body{
 		.menu__item {
 			&:hover{
 				.sublist {
-					display: flex;
 					pointer-events: all;
+					opacity: 1;
+					visibility: visible;
+					transform: translate(0%, 0px);
 				}
 			}
 		}
@@ -221,8 +210,9 @@ body{
 body {
 	&._touch {
 		.sublist__active {
-			display: flex;
-			pointer-events: auto;
+			pointer-events: all;
+			opacity: 1;
+			visibility: visible;
 		}
 	.menu__body:has(.sublist__active) {
 		~.space__cover{
@@ -235,14 +225,13 @@ body {
 				z-index: 99;
 				pointer-events: auto;
 				cursor: pointer;
-				background: #1515153d;
+				background: #15151555;
 		}
 	}
 	}
 }
 
 .menu-sublist {
-	pointer-events: all;
 	li{
 		&:not(:last-child){
 			margin-bottom: 15px;
@@ -283,5 +272,9 @@ body {
 				}
 			}
 		}
+	}
+
+	&__arrow{
+		display: none;
 	}
 }
