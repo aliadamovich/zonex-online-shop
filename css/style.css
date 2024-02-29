@@ -215,6 +215,8 @@ body._lock .space__cover {
   z-index: 99;
   pointer-events: auto;
   cursor: pointer;
+  background: rgba(21, 21, 21, 0.3333333333);
+  transition: background 0.5s ease 0s;
 }
 
 .space__cover {
@@ -695,21 +697,24 @@ body._lock .space__cover {
 }
 
 .sublist {
-  display: none;
+  display: flex;
   position: absolute;
   z-index: 100;
   top: 70%;
-  left: 0px;
   justify-content: space-evenly;
   gap: 120px;
   background: #FFF;
   padding: 50px;
   cursor: pointer;
   pointer-events: none;
+  transition: all 0.5s ease 0s;
+  opacity: 0;
+  visibility: hidden;
 }
 .sublist.__active {
-  display: flex;
   pointer-events: all;
+  opacity: 1;
+  visibility: visible;
 }
 @media (max-width: 1260px) {
   .sublist {
@@ -724,13 +729,16 @@ body._lock .space__cover {
 }
 
 body._pc .menu__item:hover .sublist {
-  display: flex;
   pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0%, 0px);
 }
 
 body._touch .sublist__active {
-  display: flex;
-  pointer-events: auto;
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
 }
 body._touch .menu__body:has(.sublist__active) ~ .space__cover {
   position: fixed;
@@ -742,12 +750,9 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
   z-index: 99;
   pointer-events: auto;
   cursor: pointer;
-  background: rgba(21, 21, 21, 0.2392156863);
+  background: rgba(21, 21, 21, 0.3333333333);
 }
 
-.menu-sublist {
-  pointer-events: all;
-}
 .menu-sublist li:not(:last-child) {
   margin-bottom: 15px;
 }
@@ -783,6 +788,9 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
 .menu-sublist__item--pic:hover img {
   transform: scale(1.05);
 }
+.menu-sublist__arrow {
+  display: none;
+}
 
 @media (max-width: 992px) {
   .menu__body {
@@ -794,12 +802,19 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
     overflow: auto;
     background-color: white;
     padding: 150px 0px 20px 0px;
-    transition: right 0.3s ease 0s;
+    transition: right 0.5s ease 0s;
     z-index: 100;
   }
   .menu__body._active {
     right: 0;
   }
+}
+@media (max-width: 992px) and (max-width: 550px) {
+  .menu__body {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
   .menu__link {
     color: #151515;
     font-size: 20px;
@@ -811,6 +826,7 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
   }
   .menu__item {
     padding: 0px 0 45px 0;
+    text-align: center;
   }
   .menu__item:nth-child(2), .menu__item:nth-child(3) {
     padding: 0px 0 45px 0;
@@ -866,6 +882,54 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
   .menu__icon._active span:last-child {
     bottom: 50%;
     transform: rotate(45deg) translate(0px, 50%);
+  }
+  .sublist {
+    background: #FFF;
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    top: 0;
+    right: -200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 60px;
+    overflow: auto;
+    margin: 0px;
+    padding: 100px 0;
+    transition: all 0.5s ease 0s;
+  }
+  .sublist__active {
+    right: 0;
+  }
+}
+@media (max-width: 992px) and (max-width: 550px) {
+  .sublist {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .menu-sublist:nth-child(3) {
+    order: 2;
+  }
+  .menu-sublist:nth-child(1) {
+    order: 1;
+  }
+  .menu-sublist:nth-child(2) {
+    order: 3;
+  }
+  .menu-sublist__arrow {
+    display: block;
+    position: absolute;
+    top: 33px;
+    left: 30px;
+    width: 22px;
+    height: 20px;
+  }
+  .menu-sublist__arrow img {
+    width: 100%;
+    height: 100%;
   }
 }
 .swiper-button-prev:after,
