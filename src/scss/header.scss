@@ -160,18 +160,19 @@
 
 	}
 }
-
+.to__cart{
+	display: none;
+}
 .sublist {
 	display: flex;
 	position: absolute;
 	z-index: 100;
 	top: 70%;
-	// left: 0;
+	left: 0;
 	justify-content: space-evenly;
 	gap: 120px;
 	background: #FFF;
 	padding: 50px;
-	cursor: pointer;
 	pointer-events: none;
 	transition: all 0.5s ease 0s;
 	opacity: 0;
@@ -217,15 +218,15 @@ body {
 	.menu__body:has(.sublist__active) {
 		~.space__cover{
 			position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				opacity: 1;
-				z-index: 99;
-				pointer-events: auto;
-				cursor: pointer;
-				background: #15151555;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 1;
+			z-index: 99;
+			pointer-events: auto;
+			cursor: pointer;
+			background: #15151555;
 		}
 	}
 	}
@@ -234,6 +235,7 @@ body {
 .menu-sublist {
 	li{
 		&:not(:last-child){
+			cursor: pointer;
 			margin-bottom: 15px;
 		}
 	}

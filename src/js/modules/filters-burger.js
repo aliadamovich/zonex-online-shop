@@ -4,6 +4,7 @@ export function createFiltersBurger() {
 	const iconCatalog = document.querySelector('.catalog__icon');
 	const asideFilter = document.querySelector('.aside-filter');
 	const buttonFilter = document.querySelector('.sort-grid__button-filter');
+	const spaceCover = document.querySelectorAll('.space__cover');
 
 	if (buttonFilter) {
 		buttonFilter.addEventListener('click', function (e) {
@@ -22,4 +23,12 @@ export function createFiltersBurger() {
 			}
 		})
 	}
+	spaceCover.forEach(item => {
+		item.addEventListener('click', () => {
+			if (asideFilter.classList.contains('_active')) {
+				asideFilter.classList.remove('_active');
+				document.body.classList.remove('_lock');
+			}
+		})
+	})
 }

@@ -101,9 +101,9 @@ import * as cardBlock from "./modules/card-color-size.js";
 cardBlock.chooseColor();
 cardBlock.chooseSize();
 
-// //*submenu
-// import * as submenu from "./modules/submenu.js";
-// submenu.submenuStart();
+// //*tocart
+import * as cart from "./modules/cart.js";
+cart.toCart();
 
 //*product fade
 import * as fade from "./modules/fadeproduct.js";
@@ -115,11 +115,9 @@ if (toTop.length > 0) {
 	toTop.forEach(item => {
 		item.addEventListener('click', (e) => {
 			e.preventDefault();
-			console.log(item);
 			
 			const coverBlock = document.querySelector('.cover-catalog');
 			if (coverBlock) {
-				console.log(coverBlock);
 				
 				coverBlock.scrollIntoView({behavior:'smooth'})
 			}

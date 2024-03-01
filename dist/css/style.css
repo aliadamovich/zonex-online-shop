@@ -375,6 +375,7 @@ body._lock .space__cover {
 .content-block__tocart {
   font-size: 13px;
   font-weight: 700;
+  color: #151515;
   text-transform: uppercase;
   background: none;
   padding: 5px 0;
@@ -696,16 +697,20 @@ body._lock .space__cover {
   width: 100px;
 }
 
+.to__cart {
+  display: none;
+}
+
 .sublist {
   display: flex;
   position: absolute;
   z-index: 100;
   top: 70%;
+  left: 0;
   justify-content: space-evenly;
   gap: 120px;
   background: #FFF;
   padding: 50px;
-  cursor: pointer;
   pointer-events: none;
   transition: all 0.5s ease 0s;
   opacity: 0;
@@ -754,6 +759,7 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
 }
 
 .menu-sublist li:not(:last-child) {
+  cursor: pointer;
   margin-bottom: 15px;
 }
 .menu-sublist__header {
@@ -889,6 +895,7 @@ body._touch .menu__body:has(.sublist__active) ~ .space__cover {
     width: 75%;
     height: 100%;
     top: 0;
+    left: auto;
     right: -200%;
     display: flex;
     flex-direction: column;

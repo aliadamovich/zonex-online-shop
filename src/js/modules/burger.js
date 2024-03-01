@@ -28,13 +28,9 @@ export function burgerStart() {
 			let nav = e.currentTarget.previousElementSibling;
 			if (nav.querySelector('.sublist').classList.contains('sublist__active')) {
 				nav.querySelector('.sublist').classList.remove('sublist__active');
-				iconMenu.style.display = 'block';
+				iconMenu.style.visibility = 'visible';
 			}
 			document.body.classList.remove('_lock');
-			// if (asideFilter.classList.contains('_active')) {
-			// 	asideFilter.classList.remove('_active');
-			// 	document.body.classList.remove('_lock');
-			// }
 		})
 	})
 
@@ -61,8 +57,9 @@ export function burgerStart() {
 
 	const menuItem = document.querySelectorAll('.menu__link');
 	const submenu = document.querySelector('.sublist');
-	if (isMobile.any() || window.innerWidth < 992) {
+	if (isMobile.any() || window.innerWidth <= 992) {
 		document.body.classList.add('_touch');
+
 		if (menuItem.length > 0) {
 			menuItem.forEach(item => {
 				let submenu = item.nextElementSibling;
@@ -71,10 +68,9 @@ export function burgerStart() {
 						e.preventDefault();
 						submenu.classList.toggle('sublist__active')
 						if (menuBody.classList.contains('_active')) {
-							// document.body.classList.remove('_lock');
+							iconMenu.style.visibility = 'hidden';
 							iconMenu.classList.remove('_active');
 							menuBody.classList.remove('_active');
-							iconMenu.style.display = 'none';
 						}
 					})
 				}
@@ -88,11 +84,10 @@ const sublistArrow = document.querySelectorAll('.menu-sublist__arrow');
 sublistArrow.forEach(arrow => {
 	arrow.addEventListener('click', () => {
 		if (!menuBody.classList.contains('_active')) {
-			// document.body.classList.remove('_lock');
-			// iconMenu.classList.remove('_active');
 			submenu.classList.remove('sublist__active');
 			menuBody.classList.add('_active');
-			iconMenu.style.display = 'block';
+			iconMenu.style.visibility = 'visible';
+			iconMenu.classList.add('_active');
 		}
 	})
 })
