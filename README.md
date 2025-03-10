@@ -1,4 +1,4 @@
-### Zonex shop clothes online-store
+### Zonex online-store
 In this project built on vanilla JS I performed on 
 * Product cards
 * Pop-ups
